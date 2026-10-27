@@ -2,13 +2,15 @@
 
 Estudo de carroceria do Buick Regal NASCAR 1987 para controle remoto, a partir do esboço fornecido. Comprimento 620 mm, largura 240 mm, entre-eixos 400 mm.
 
-## Foco atual: somente o para-choque dianteiro
+## Foco atual: frente inteira em peça única
 
-[Ver estudo ampliado](parachoque_dianteiro_estudo/previa_parachoque.png) · [Baixar STL e imagens](Parachoque_Dianteiro_Estudo.zip) · [Hipóteses, medidas e instruções](parachoque_dianteiro_estudo/LEIA-ME.md)
+[Ver imagens da frente](frente_inteira/previa_frente_inteira.png) · [Baixar STL e imagens](Frente_Inteira_Buick_STL.zip) · [Medidas e instruções](frente_inteira/LEIA-ME.md)
 
-Estudo da região abaixo dos faróis, com frisos, rebaixos e retornos laterais. Largura 240 mm; altura 44 mm e profundidade 40 mm ainda estimadas. Entrega a peça inteira e, como alternativa, duas metades. Não integrado automaticamente à carroceria V2. O restante do carro aguarda revisão da forma desta peça.
+Uma única casca com cinco vãos atravessantes: grade, dois conjuntos de faróis e duas entradas inferiores. Sem molduras ou insertos; a área central da placa permanece fechada. Dimensões: largura 240 mm, altura 65 mm e retorno lateral estimado de 40 mm. Não validada em impressão física ou no chassi.
 
-![Para-choque isolado](parachoque_dianteiro_estudo/previa_parachoque.png)
+![Frente inteira com vãos](frente_inteira/previa_frente_inteira.png)
+
+O [estudo anterior da faixa inferior](parachoque_dianteiro_estudo/LEIA-ME.md) está preservado como histórico.
 
 ## Carroceria anterior: V2
 
