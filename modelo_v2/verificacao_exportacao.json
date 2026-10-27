@@ -1,9 +1,0 @@
-{
-  "arquivos_stl_verificados": 23,
-  "todos_fechados_e_conexos": true,
-  "dimensoes_verificadas": true,
-  "pares_com_sobreposicao_de_caixas_testados": 13,
-  "interferencias_volumetricas": [],
-  "teste_fisico": false,
-  "teste_de_fatiamento": false
-}
