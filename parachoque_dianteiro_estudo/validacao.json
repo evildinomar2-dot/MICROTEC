@@ -1,0 +1,57 @@
+{
+  "descricao": "estudo visual isolado, sem valida\u00e7\u00e3o de impress\u00e3o ou encaixes",
+  "largura_referencia_mm": 240.0,
+  "altura_assumida_mm": 44.0,
+  "profundidade_assumida_mm": 40.0,
+  "espessura_alvo_aproximado_mm": 2.0,
+  "entradas_laterais_mm": [
+    52,
+    12
+  ],
+  "placa_rebaixo_mm": [
+    44,
+    19
+  ],
+  "simplificacao_tolerancia_mm": 0.015,
+  "verificacao_parede": {
+    "amostras": 3000,
+    "distancia_min_mm": 1.936,
+    "distancia_mediana_mm": 1.9995,
+    "metodo": "distancia de vertices internos amostrados \u00e0 superf\u00edcie externa; n\u00e3o \u00e9 garantia global"
+  },
+  "stl": [
+    {
+      "arquivo": "parachoque_inteiro.stl",
+      "dimensoes_XYZ_mm": [
+        40.0,
+        240.0,
+        44.0
+      ],
+      "volume_mm3": 29564.066,
+      "fechado": true,
+      "componentes": 1
+    },
+    {
+      "arquivo": "metade_esquerda.stl",
+      "dimensoes_XYZ_mm": [
+        40.0,
+        120.0,
+        44.0
+      ],
+      "volume_mm3": 14781.543,
+      "fechado": true,
+      "componentes": 1
+    },
+    {
+      "arquivo": "metade_direita.stl",
+      "dimensoes_XYZ_mm": [
+        40.0,
+        120.0,
+        44.0
+      ],
+      "volume_mm3": 14782.523,
+      "fechado": true,
+      "componentes": 1
+    }
+  ]
+}
