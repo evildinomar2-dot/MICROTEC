@@ -1,0 +1,247 @@
+{
+  "versao": 2,
+  "unidade": "mm",
+  "dimensoes_conjunto_mm": [
+    620.0,
+    240.0,
+    147.0
+  ],
+  "entre_eixos_mm": 400,
+  "z_solo_mm": 0,
+  "z_base_mm": 8,
+  "z_teto_mm": 155,
+  "espessura": "deslocamento nominal de 2 mm; varia nas inclina\u00e7\u00f5es",
+  "pecas": [
+    {
+      "peca": "03_capo",
+      "dimensoes_mm": [
+        183.0,
+        192.0,
+        14.747
+      ],
+      "volume_mm3": 71049.782,
+      "malha_fechada": true
+    },
+    {
+      "peca": "04_tampa_porta_malas",
+      "dimensoes_mm": [
+        118.0,
+        192.0,
+        13.701
+      ],
+      "volume_mm3": 45810.199,
+      "malha_fechada": true
+    },
+    {
+      "peca": "05_cabine_frente",
+      "dimensoes_mm": [
+        115.322,
+        215.42,
+        67.0
+      ],
+      "volume_mm3": 39083.425,
+      "malha_fechada": true
+    },
+    {
+      "peca": "06_cabine_traseira",
+      "dimensoes_mm": [
+        137.101,
+        216.819,
+        67.0
+      ],
+      "volume_mm3": 53054.498,
+      "malha_fechada": true
+    },
+    {
+      "peca": "para_lama_dianteiro_esquerdo",
+      "dimensoes_mm": [
+        183.0,
+        24.0,
+        76.904
+      ],
+      "volume_mm3": 21491.65,
+      "malha_fechada": true
+    },
+    {
+      "peca": "porta_esquerdo",
+      "dimensoes_mm": [
+        205.0,
+        115.503,
+        80.0
+      ],
+      "volume_mm3": 37277.27,
+      "malha_fechada": true
+    },
+    {
+      "peca": "lateral_traseira_esquerdo",
+      "dimensoes_mm": [
+        188.0,
+        119.604,
+        80.0
+      ],
+      "volume_mm3": 25137.059,
+      "malha_fechada": true
+    },
+    {
+      "peca": "para_lama_dianteiro_direito",
+      "dimensoes_mm": [
+        183.0,
+        24.0,
+        76.904
+      ],
+      "volume_mm3": 21494.438,
+      "malha_fechada": true
+    },
+    {
+      "peca": "porta_direito",
+      "dimensoes_mm": [
+        205.0,
+        115.503,
+        80.0
+      ],
+      "volume_mm3": 37259.649,
+      "malha_fechada": true
+    },
+    {
+      "peca": "lateral_traseira_direito",
+      "dimensoes_mm": [
+        188.0,
+        119.604,
+        80.0
+      ],
+      "volume_mm3": 25143.739,
+      "malha_fechada": true
+    },
+    {
+      "peca": "01_frente_esquerda",
+      "dimensoes_mm": [
+        22.0,
+        116.837,
+        65.0
+      ],
+      "volume_mm3": 29577.743,
+      "malha_fechada": true
+    },
+    {
+      "peca": "01_frente_direita",
+      "dimensoes_mm": [
+        22.0,
+        116.837,
+        65.0
+      ],
+      "volume_mm3": 29575.947,
+      "malha_fechada": true
+    },
+    {
+      "peca": "02_traseira_esquerda",
+      "dimensoes_mm": [
+        22.0,
+        115.838,
+        66.005
+      ],
+      "volume_mm3": 33247.172,
+      "malha_fechada": true
+    },
+    {
+      "peca": "02_traseira_direita",
+      "dimensoes_mm": [
+        22.0,
+        115.838,
+        66.005
+      ],
+      "volume_mm3": 33248.531,
+      "malha_fechada": true
+    },
+    {
+      "peca": "07_grade",
+      "dimensoes_mm": [
+        2.8,
+        95.4,
+        29.4
+      ],
+      "volume_mm3": 5094.289,
+      "malha_fechada": true
+    },
+    {
+      "peca": "farol_1",
+      "dimensoes_mm": [
+        2.6,
+        24.4,
+        20.4
+      ],
+      "volume_mm3": 871.796,
+      "malha_fechada": true
+    },
+    {
+      "peca": "farol_2",
+      "dimensoes_mm": [
+        2.6,
+        24.4,
+        20.4
+      ],
+      "volume_mm3": 871.796,
+      "malha_fechada": true
+    },
+    {
+      "peca": "farol_3",
+      "dimensoes_mm": [
+        2.6,
+        24.4,
+        20.4
+      ],
+      "volume_mm3": 871.796,
+      "malha_fechada": true
+    },
+    {
+      "peca": "farol_4",
+      "dimensoes_mm": [
+        2.6,
+        24.4,
+        20.4
+      ],
+      "volume_mm3": 871.796,
+      "malha_fechada": true
+    },
+    {
+      "peca": "lanterna_esquerda",
+      "dimensoes_mm": [
+        2.5,
+        73.4,
+        17.4
+      ],
+      "volume_mm3": 2078.74,
+      "malha_fechada": true
+    },
+    {
+      "peca": "lanterna_direita",
+      "dimensoes_mm": [
+        2.5,
+        73.4,
+        17.4
+      ],
+      "volume_mm3": 2078.74,
+      "malha_fechada": true
+    },
+    {
+      "peca": "spoiler",
+      "dimensoes_mm": [
+        12.0,
+        208.0,
+        18.0
+      ],
+      "volume_mm3": 11232.0,
+      "malha_fechada": true
+    },
+    {
+      "peca": "tala_colagem_reta",
+      "dimensoes_mm": [
+        24.0,
+        12.0,
+        2.0
+      ],
+      "volume_mm3": 576.0,
+      "malha_fechada": true
+    }
+  ],
+  "fragmentos_descartados": []
+}
