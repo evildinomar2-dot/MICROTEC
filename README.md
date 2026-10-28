@@ -7,9 +7,23 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 [Baixar o pacote completo](https://github.com/evildinomar2-dot/MICROTEC/raw/refs/heads/main/Buick_Regal_240_CAD_Fusion.zip)
 · [Ver a prévia](PREVIA_BUICK.png)
+· [Comparar as curvas: antes e agora](COMPARACAO_CURVATURA.png)
 · [Como gerar os F3D](fusion/COMO_GERAR_F3D.md)
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
+
+## Revisão das formas
+
+A vista superior e a perspectiva da referência do carro completo orientaram
+esta revisão. A frente recebeu mais abaulamento em planta, cantos com dobra
+arredondada e retornos que se estreitam suavemente até os para-lamas. O topo
+plano dos para-lamas foi substituído por uma casca contínua, com ombro curvo,
+variação suave ao longo do comprimento e relevo acompanhando o arco da roda.
+As abas e luvas internas acompanham o novo perfil lateral.
+
+Foram preservadas a frente de 240 mm, a grade de 135,7 mm e as dimensões
+principais dos componentes. A comparação usa o mesmo renderizador e o mesmo
+ângulo para mostrar a mudança real na geometria.
 
 ## Abrir no Fusion
 
@@ -68,8 +82,9 @@ referência, não uma reprodução dimensional certificada do Buick original.
 - A base da carroceria usa parede nominal de 2 mm; frisos e superfícies curvas
   alteram a espessura medida na direção normal. Os aros mais finos, inclusive
   o suporte da grade, exigem conferir os perímetros no fatiador.
-- As duas abas de cada para-lama deslizam nas luvas internas da frente. A
-  folga longitudinal entre os painéis é de 0,30 mm.
+- As duas abas de cada para-lama se alojam nas luvas internas da frente. Elas
+  acompanham a nova curvatura; a montagem e a retenção por colagem precisam de
+  teste físico. A folga longitudinal entre os painéis é de 0,30 mm.
 - Grade, molduras, lentes e anel traseiro foram preparados para montagem por
   colagem. Não foram criados encaixes elásticos, roscas ou fixações ao chassi.
 - A placa opcional é plana e precisa de espaçadores/adesivo adequados ao perfil
@@ -100,6 +115,7 @@ uma peça de 240 mm ou divisão posterior no Fusion.
 - `fusion/`: script e instruções para gerar os F3D;
 - `cad/`: código-fonte do modelo e da verificação;
 - `PREVIA_BUICK.png` e `VISTA_FRONTAL.png`: prévias;
+- `COMPARACAO_CURVATURA.png`: geometria anterior e revista, no mesmo ângulo;
 - `MEDIDAS.csv`: dimensões medidas dos sólidos exportados;
 - `validacao_cad.json`: relatório de validação.
 
@@ -114,8 +130,16 @@ python cad/assemble.py
 python cad/preview.py
 ```
 
-As medidas-base e as interfaces estão em `cad/common.py`; a carroceria e os
-acessórios estão em `cad/body.py` e `cad/details.py`. Algumas dimensões dos
+As medidas-base e as interfaces estão em `cad/common.py`; as seções curvas
+estão em `cad/formas_carroceria.py`; a carroceria e os acessórios estão em
+`cad/body.py` e `cad/details.py`. Algumas dimensões dos
 acessórios são explícitas nesses arquivos e precisam ser ajustadas em conjunto.
 No Fusion, ao reduzir o conjunto, selecione todos os componentes e aplique o
 mesmo fator de escala; isso também reduz paredes e folgas.
+
+As imagens entregues usam `cad/render_vtk.py`, com normais VTK e renderização
+por profundidade em cada pixel. Para regenerá-las em Linux com um compilador
+C (`cc`) disponível, execute `python cad/render_vtk.py --sheet-dir .`.
+`cad/preview.py` continua disponível como alternativa com Matplotlib.
+Esses recursos servem apenas para gerar prévias fora do Fusion; não são
+necessários para abrir os STEP nem para executar o gerador F3D no Fusion.
