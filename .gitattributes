@@ -1,0 +1,4 @@
+# CAD exportado: preservar bytes e evitar diffs de centenas de milhares de linhas.
+*.step binary
+*.zip binary
+*.png binary

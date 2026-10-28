@@ -1,0 +1,495 @@
+{
+  "unidade": "mm",
+  "componentes": [
+    {
+      "arquivo": "01_parachoque_dianteiro.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 106,
+      "volume_mm3": 26783.5446,
+      "dimensoes_xyz_mm": [
+        40.0,
+        240.0,
+        65.0
+      ],
+      "limites_min_xyz": [
+        -0.0,
+        -120.0,
+        -0.0
+      ],
+      "limites_max_xyz": [
+        40.0,
+        120.0,
+        65.0
+      ]
+    },
+    {
+      "arquivo": "02_grade_central.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 439,
+      "volume_mm3": 7428.22523,
+      "dimensoes_xyz_mm": [
+        10.0,
+        135.7,
+        28.0
+      ],
+      "limites_min_xyz": [
+        1.75,
+        -67.85,
+        33.0
+      ],
+      "limites_max_xyz": [
+        11.75,
+        67.85,
+        61.0
+      ]
+    },
+    {
+      "arquivo": "03_carcaca_farois_esquerdo.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 53,
+      "volume_mm3": 2702.88926,
+      "dimensoes_xyz_mm": [
+        20.0,
+        42.0,
+        28.0
+      ],
+      "limites_min_xyz": [
+        2.526,
+        -115.8,
+        33.0
+      ],
+      "limites_max_xyz": [
+        22.526,
+        -73.8,
+        61.0
+      ]
+    },
+    {
+      "arquivo": "04_carcaca_farois_direito.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 53,
+      "volume_mm3": 2702.89481,
+      "dimensoes_xyz_mm": [
+        20.0,
+        42.0,
+        28.0
+      ],
+      "limites_min_xyz": [
+        2.526,
+        73.8,
+        33.0
+      ],
+      "limites_max_xyz": [
+        22.526,
+        115.8,
+        61.0
+      ]
+    },
+    {
+      "arquivo": "05_lente_farol_direito_1.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 56,
+      "volume_mm3": 1035.90311,
+      "dimensoes_xyz_mm": [
+        6.0,
+        14.6,
+        14.6
+      ],
+      "limites_min_xyz": [
+        1.3,
+        76.1,
+        39.7
+      ],
+      "limites_max_xyz": [
+        7.3,
+        90.7,
+        54.3
+      ]
+    },
+    {
+      "arquivo": "05_lente_farol_direito_2.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 56,
+      "volume_mm3": 1029.40117,
+      "dimensoes_xyz_mm": [
+        6.0,
+        14.6,
+        14.6
+      ],
+      "limites_min_xyz": [
+        1.726,
+        93.9,
+        39.7
+      ],
+      "limites_max_xyz": [
+        7.726,
+        108.5,
+        54.3
+      ]
+    },
+    {
+      "arquivo": "05_lente_farol_esquerdo_1.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 56,
+      "volume_mm3": 1035.90311,
+      "dimensoes_xyz_mm": [
+        6.0,
+        14.6,
+        14.6
+      ],
+      "limites_min_xyz": [
+        1.3,
+        -90.7,
+        39.7
+      ],
+      "limites_max_xyz": [
+        7.3,
+        -76.1,
+        54.3
+      ]
+    },
+    {
+      "arquivo": "05_lente_farol_esquerdo_2.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 56,
+      "volume_mm3": 1029.40117,
+      "dimensoes_xyz_mm": [
+        6.0,
+        14.6,
+        14.6
+      ],
+      "limites_min_xyz": [
+        1.726,
+        -108.5,
+        39.7
+      ],
+      "limites_max_xyz": [
+        7.726,
+        -93.9,
+        54.3
+      ]
+    },
+    {
+      "arquivo": "06_lente_pisca_direito.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 25,
+      "volume_mm3": 371.03334,
+      "dimensoes_xyz_mm": [
+        6.0,
+        3.6,
+        22.4
+      ],
+      "limites_min_xyz": [
+        3.123,
+        111.2,
+        35.8
+      ],
+      "limites_max_xyz": [
+        9.123,
+        114.8,
+        58.2
+      ]
+    },
+    {
+      "arquivo": "06_lente_pisca_esquerdo.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 25,
+      "volume_mm3": 371.03335,
+      "dimensoes_xyz_mm": [
+        6.0,
+        3.6,
+        22.4
+      ],
+      "limites_min_xyz": [
+        3.123,
+        -114.8,
+        35.8
+      ],
+      "limites_max_xyz": [
+        9.123,
+        -111.2,
+        58.2
+      ]
+    },
+    {
+      "arquivo": "07_moldura_farol_direito_1.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 43,
+      "volume_mm3": 401.41596,
+      "dimensoes_xyz_mm": [
+        5.0,
+        17.2,
+        21.8
+      ],
+      "limites_min_xyz": [
+        1.255,
+        74.8,
+        36.1
+      ],
+      "limites_max_xyz": [
+        6.255,
+        92.0,
+        57.9
+      ]
+    },
+    {
+      "arquivo": "07_moldura_farol_direito_2.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 43,
+      "volume_mm3": 397.56691,
+      "dimensoes_xyz_mm": [
+        5.0,
+        17.2,
+        21.8
+      ],
+      "limites_min_xyz": [
+        1.671,
+        92.6,
+        36.1
+      ],
+      "limites_max_xyz": [
+        6.671,
+        109.8,
+        57.9
+      ]
+    },
+    {
+      "arquivo": "07_moldura_farol_esquerdo_1.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 43,
+      "volume_mm3": 401.41635,
+      "dimensoes_xyz_mm": [
+        5.0,
+        17.2,
+        21.8
+      ],
+      "limites_min_xyz": [
+        1.255,
+        -92.0,
+        36.1
+      ],
+      "limites_max_xyz": [
+        6.255,
+        -74.8,
+        57.9
+      ]
+    },
+    {
+      "arquivo": "07_moldura_farol_esquerdo_2.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 43,
+      "volume_mm3": 397.56743,
+      "dimensoes_xyz_mm": [
+        5.0,
+        17.2,
+        21.8
+      ],
+      "limites_min_xyz": [
+        1.671,
+        -109.8,
+        36.1
+      ],
+      "limites_max_xyz": [
+        6.671,
+        -92.6,
+        57.9
+      ]
+    },
+    {
+      "arquivo": "08_duto_inferior_esquerdo.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 43,
+      "volume_mm3": 5130.02306,
+      "dimensoes_xyz_mm": [
+        30.0,
+        52.0,
+        15.5
+      ],
+      "limites_min_xyz": [
+        0.584,
+        -105.0,
+        6.25
+      ],
+      "limites_max_xyz": [
+        30.584,
+        -53.0,
+        21.75
+      ]
+    },
+    {
+      "arquivo": "09_duto_inferior_direito.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 43,
+      "volume_mm3": 5130.02074,
+      "dimensoes_xyz_mm": [
+        30.0,
+        52.0,
+        15.5
+      ],
+      "limites_min_xyz": [
+        0.584,
+        53.0,
+        6.25
+      ],
+      "limites_max_xyz": [
+        30.584,
+        105.0,
+        21.75
+      ]
+    },
+    {
+      "arquivo": "10_suporte_interno_grade.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 18,
+      "volume_mm3": 1821.92091,
+      "dimensoes_xyz_mm": [
+        10.0,
+        135.7,
+        28.0
+      ],
+      "limites_min_xyz": [
+        5.75,
+        -67.85,
+        33.0
+      ],
+      "limites_max_xyz": [
+        15.75,
+        67.85,
+        61.0
+      ]
+    },
+    {
+      "arquivo": "11_placa_opcional.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 19,
+      "volume_mm3": 3557.01106,
+      "dimensoes_xyz_mm": [
+        3.0,
+        60.0,
+        25.0
+      ],
+      "limites_min_xyz": [
+        -3.3,
+        -30.0,
+        2.5
+      ],
+      "limites_max_xyz": [
+        -0.3,
+        30.0,
+        27.5
+      ]
+    },
+    {
+      "arquivo": "12_paralama_esquerdo.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 68,
+      "volume_mm3": 20859.63723,
+      "dimensoes_xyz_mm": [
+        130.0,
+        40.0,
+        65.0
+      ],
+      "limites_min_xyz": [
+        30.3,
+        -120.0,
+        -0.0
+      ],
+      "limites_max_xyz": [
+        160.3,
+        -80.0,
+        65.0
+      ]
+    },
+    {
+      "arquivo": "13_paralama_direito.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 68,
+      "volume_mm3": 20859.63723,
+      "dimensoes_xyz_mm": [
+        130.0,
+        40.0,
+        65.0
+      ],
+      "limites_min_xyz": [
+        30.3,
+        80.0,
+        -0.0
+      ],
+      "limites_max_xyz": [
+        160.3,
+        120.0,
+        65.0
+      ]
+    }
+  ],
+  "montagem_solidos": 20,
+  "montagem_valida": true,
+  "folga_lateral_nominal_mm": 0.3,
+  "testado_no_fusion": false,
+  "testado_fisicamente": false,
+  "intersecoes": [],
+  "aberturas": [
+    {
+      "nome": "grade",
+      "intervalo_x_verificado_mm": [
+        -5.0,
+        20.0
+      ],
+      "volume_obstrucao_mm3": 0.0
+    },
+    {
+      "nome": "farol_E",
+      "intervalo_x_verificado_mm": [
+        -5.0,
+        20.0
+      ],
+      "volume_obstrucao_mm3": 0.0
+    },
+    {
+      "nome": "farol_D",
+      "intervalo_x_verificado_mm": [
+        -5.0,
+        20.0
+      ],
+      "volume_obstrucao_mm3": 0.0
+    },
+    {
+      "nome": "duto_E",
+      "intervalo_x_verificado_mm": [
+        -5.0,
+        20.0
+      ],
+      "volume_obstrucao_mm3": 0.0
+    },
+    {
+      "nome": "duto_D",
+      "intervalo_x_verificado_mm": [
+        -5.0,
+        20.0
+      ],
+      "volume_obstrucao_mm3": 0.0
+    }
+  ],
+  "pares_com_caixas_sobrepostas": 35,
+  "sem_interferencias_volumetricas": true
+}

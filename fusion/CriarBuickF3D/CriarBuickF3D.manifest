@@ -1,0 +1,9 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "author": "MICROTEC",
+  "description": {
+    "": "Importa os solidos STEP do Buick Regal e gera montagem e pecas em F3D no Autodesk Fusion."
+  },
+  "supportedOS": "windows|mac"
+}

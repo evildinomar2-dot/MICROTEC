@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+F3D_GERADOS/
+*.log
