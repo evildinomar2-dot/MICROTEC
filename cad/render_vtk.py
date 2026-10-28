@@ -160,14 +160,14 @@ def sheet(parts,output_dir):
     draw.text((width//2,108),'Superficies refinadas a partir da referencia — previa dos proprios STEP',font=_font(23),fill='#4a5360',anchor='mm')
     panels=[('Montagem — 21 componentes',{},(0,155)),
             ('Pecas separadas — vista explodida',{'explode':True},(1200,155)),
-            ('Vista frontal — grade de 135,7 mm',{'front':True},(0,845)),
+            ('Vista frontal — grade de 95 mm',{'front':True},(0,845)),
             ('Lentes e molduras independentes',{'detail':True},(1200,845))]
     with tempfile.TemporaryDirectory(prefix='buick_renders_') as temp:
         for i,(title,options,(x,y)) in enumerate(panels):
             draw.text((x+600,y+20),title,font=_font(26),fill='#252d37',anchor='mm')
             img=render(parts,Path(temp)/f'view_{i}.png',size=(1160,600),meshes=meshes,**options)
             result.paste(img,(x+20,y+55))
-    draw.text((width//2,1588),'240 x 65 x 40 mm | Grade: 135,7 mm | Arco livre das rodas: 62 mm',font=_font(24),fill='#252d37',anchor='mm')
+    draw.text((width//2,1588),'240 x 65 x 40 mm | Grade: 95 mm | Arco livre das rodas: 62 mm',font=_font(24),fill='#252d37',anchor='mm')
     draw.text((width//2,1640),'Modelo para refinamento. Montagem fisica e importacao no Fusion ainda nao testadas.',font=_font(22),fill='#505b69',anchor='mm')
     result.save(output/'PREVIA_BUICK.png')
     front_parts=[p for p in parts if p['name'][:2] not in ('12','13')]
@@ -214,7 +214,7 @@ def comparison(parts,old_step_dir,output_path):
                 draw.text((1200,824),'Para-lama esquerdo: transição do topo para a lateral',font=_font(27),fill='#252d37',anchor='mm')
     draw.text((600,1506),'Topo plano e cantos mais retos',font=_font(25),fill='#4a5360',anchor='mm')
     draw.text((1800,1506),'Ombro contínuo e retornos curvos',font=_font(25),fill='#4a5360',anchor='mm')
-    draw.text((1200,1570),'Geometria CAD real • Frente de 240 mm • Grade de 135,7 mm',font=_font(24),fill='#4a5360',anchor='mm')
+    draw.text((1200,1570),'Geometria CAD real • Frente de 240 mm • Grade de 95 mm',font=_font(24),fill='#4a5360',anchor='mm')
     dest=Path(output_path);dest.parent.mkdir(parents=True,exist_ok=True);result.save(dest)
     return result
 

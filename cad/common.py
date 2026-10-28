@@ -10,21 +10,21 @@ import cadquery as cq
 
 WIDTH, HEIGHT, DEPTH = 240.0, 65.0, 40.0
 WALL, CLEARANCE = 2.0, 0.30
-GRILLE_W, GRILLE_H, GRILLE_Z = 135.7, 28.0, 47.0
-LAMP_W, LAMP_H, LAMP_Y, LAMP_Z = 42.0, 28.0, 94.8, 47.0
-DUCT_W, DUCT_H, DUCT_Y, DUCT_Z = 52.0, 15.5, 79.0, 14.0
+GRILLE_W, GRILLE_H, GRILLE_Z = 95.0, 26.0, 47.0
+LAMP_W, LAMP_H, LAMP_Y, LAMP_Z = 58.0, 20.0, 82.5, 47.0
+DUCT_W, DUCT_H, DUCT_Y, DUCT_Z = 55.0, 12.0, 79.0, 16.0
 # Os recortes recebem as mangas traseiras; as abas externas cobrem as bordas.
 HOLES = [
-    ('grade', 0., GRILLE_Z, 134.3, 26.6, 1.0),
-    ('farol_E', -LAMP_Y, LAMP_Z, 40.6, 26.6, 1.0),
-    ('farol_D', LAMP_Y, LAMP_Z, 40.6, 26.6, 1.0),
-    ('duto_E', -DUCT_Y, DUCT_Z, 50.6, 14.1, 1.0),
-    ('duto_D', DUCT_Y, DUCT_Z, 50.6, 14.1, 1.0),
+    ('grade', 0., GRILLE_Z, 93.6, 24.6, 1.0),
+    ('farol_E', -LAMP_Y, LAMP_Z, 56.6, 18.6, 1.0),
+    ('farol_D', LAMP_Y, LAMP_Z, 56.6, 18.6, 1.0),
+    ('duto_E', -DUCT_Y, DUCT_Z, 53.6, 10.6, 1.0),
+    ('duto_D', DUCT_Y, DUCT_Z, 53.6, 10.6, 1.0),
 ]
 PROFILE = np.array([(0.,1.0),(1.,0.35),(2.,0.),(3.,.35),(5.,1.6),
                     (8.,2.),(23.,2.3),(25.,2.),(27.,.4),(28.,.1),
-                    (29.,.4),(31.,2.8),(33.,3.4),(40.,4.1),
-                    (55.,6.0),(62.,7.0),(65.,8.0)])
+                    (29.,.4),(31.,2.8),(33.,4.0),(40.,6.4),
+                    (55.,11.5),(62.,13.9),(65.,15.0)])
 _section = PchipInterpolator(PROFILE[:,0], PROFILE[:,1])
 
 def front_x(y, z):

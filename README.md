@@ -7,6 +7,8 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 [Baixar o pacote completo](https://github.com/evildinomar2-dot/MICROTEC/raw/refs/heads/main/Buick_Regal_240_CAD_Fusion.zip)
 · [Ver a prévia](PREVIA_BUICK.png)
+· [Comparar a frente](COMPARACAO_FRENTE.png)
+· [Conferir a inclinação lateral](VISTA_LATERAL_FRENTE.png)
 · [Vista superior com capô](VISTA_SUPERIOR_CAPO.png)
 · [Como gerar os F3D](fusion/COMO_GERAR_F3D.md)
 
@@ -19,7 +21,7 @@ a borda junto ao capô passa de Y=±80 para ±98 mm. O capô tem 195,4 mm
 de largura, com folga lateral de 0,30 mm. Os para-lamas foram prolongados
 até X=210,3 mm; o capô termina em X=210 mm. Esses comprimentos são
 estimativas visuais da prancha, não cotas certificadas do carro original.
-A frente mantém 240 mm e a grade mantém 135,7 mm.
+A frente mantém 240 mm. Na revisão visual aprovada, a grade passa a 95 mm.
 
 O capô é uma casca curva nominal de 2 mm, removível para cima, com quatro
 pinos de Ø4 mm, batentes de Ø6 mm e alojamentos Ø4,6 mm nos suportes internos dos para-lamas.
@@ -49,20 +51,23 @@ o registro das novas operações feitas após a importação.
 ## Peças e dimensões
 
 Medidas em milímetros. Para os componentes da frente, as colunas indicam
-largura em Y, altura em Z e profundidade em X. O encaixe dos para-lamas
+largura em Y, altura em Z e profundidade nominal de construção em X.
+Na face inclinada, a profundidade total aumenta com o recuo; consulte
+`MEDIDAS.csv` para as caixas medidas dos sólidos finais. As peças não são
+truncadas para caber na antiga profundidade, preservando os aros superiores. O encaixe dos para-lamas
 acrescenta 10 mm à frente do painel de 170 mm.
 
 | Componente | Quantidade | Largura × altura × profundidade |
 |---|---:|---|
 | Para-choque / frente inteira | 1 | 240 × 65 × 40 |
-| Grade central com barras | 1 | 135,7 × 28 × 10 |
-| Carcaça do conjunto de dois faróis | 2 | 42 × 28 × 20 |
-| Lente do farol | 4 | 14,6 × 14,6 × 6 |
-| Lente do pisca | 2 | 3,6 × 22,4 × 6 |
-| Moldura individual do farol | 4 | 17,2 × 21,8 × 5 |
-| Duto inferior aberto | 2 | 52 × 15,5 × 30 |
-| Anel de suporte traseiro da grade | 1 | 135,7 × 28 × 10 |
-| Placa opcional | 1 | 60 × 25 × 3 |
+| Grade central com barras | 1 | 95 × 26 × 10 |
+| Carcaça do conjunto de dois faróis | 2 | 58 × 20 × 20 |
+| Lente do farol | 4 | 21 × 13 × 6 |
+| Lente do pisca | 2 | 3,6 × 16,6 × 6 |
+| Moldura individual do farol | 4 | 24 × 17 × 5 |
+| Duto inferior aberto | 2 | 55 × 12 × 30 |
+| Anel de suporte traseiro da grade | 1 | 95 × 26 × 10 |
+| Placa opcional | 1 | 50 × 16 × 3 |
 | Capô removível | 1 | largura 195,4; comprimento aproximado 200; parede 2 |
 | Para-lama dianteiro | 2 | painel: 170 de comprimento × 22 de largura × 65 de altura |
 
@@ -73,11 +78,14 @@ do interior do carro. X cresce para trás, Y indica a largura, Z aponta para cim
 
 ## Interpretação da prancha e encaixes
 
-A prancha mistura cotas incompatíveis: o conjunto indicado com 27,5 mm não
-comporta dois faróis de 24 mm e um pisca de 8 mm. Conforme a escolha do usuário,
-foram preservados **240 mm na frente e 135,7 mm na grade**, e as lentes e
-molduras foram reduzidas para caber. Esta é uma interpretação modelável da
-referência, não uma reprodução dimensional certificada do Buick original.
+A nova prancha frontal foi usada pelas proporções visuais, conforme a escolha
+do usuário: largura total de 240 mm, grade de 95 × 26 mm e conjuntos de
+faróis de 58 × 20 mm. As cotas incompatíveis da imagem (120 + 95 + 95 mm
+em 240 mm, e 155 mm até o capô) não foram reproduzidas. A altura nominal
+da casca frontal continua 65 mm. A faixa superior recua cerca de 11 mm
+entre Z=33 e Z=65: inclinação média aproximada de 19 graus em relação à
+vertical. Este ângulo é uma estimativa de modelagem, não uma medição
+certificada da referência. O capô e os encaixes acompanham o novo recuo.
 
 - A frente possui cinco aberturas reais: grade, dois conjuntos de faróis e
   dois dutos inferiores. A região da placa é fechada.

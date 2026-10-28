@@ -19,7 +19,7 @@ def return_patch(xs,zs,inward_a,inward_b):
 
 def attachment(z):
     pad=return_patch(np.linspace(29.,40.,9),np.linspace(z-2.,z+7.,9),.8,8.)
-    slot=return_patch(np.linspace(30.,41.,10),np.linspace(z-.3,z+5.3,9),2.,6.2)
+    slot=return_patch(np.linspace(30.,41.,10),np.linspace(z-.3,z+5.3,9),1.8,6.2)
     return one(pad.cut(slot),'luva interna')
 
 def bumper():
@@ -70,7 +70,7 @@ def bumper():
             shape=shape.fuse(pad,tol=1e-5)
             print('Luva',sign,z,'valido',shape.isValid(),flush=True)
     # Shoulder infills above the headlights close the corners beside the hood.
-    xs=np.linspace(12.,40.,25);ts=np.linspace(0.,1.,17)
+    xs=np.linspace(18.,40.,25);ts=np.linspace(0.,1.,17)
     xx,tt=np.meshgrid(xs,ts,indexing='ij')
     outer=np.minimum(119.8,return_y(xx,64.0)+.7)
     yy=98.+(outer-98.)*tt

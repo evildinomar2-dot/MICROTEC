@@ -73,7 +73,7 @@ def main():
     gs=fig.add_gridspec(2,2,left=.025,right=.975,top=.89,bottom=.09,wspace=.015,hspace=.04)
     panels=[('Montagem — 21 componentes',False,False,False),
             ('Peças separadas — vista explodida',True,False,False),
-            ('Vista frontal — grade de 135,7 mm',False,True,False),
+            ('Vista frontal — grade de 95 mm',False,True,False),
             ('Faróis — lentes e molduras independentes',False,False,True)]
     for slot,(title,exploded,front,detail) in zip(gs,panels):
         ax=fig.add_subplot(slot,projection='3d')

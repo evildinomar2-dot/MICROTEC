@@ -5,8 +5,8 @@
       "arquivo": "01_parachoque_dianteiro.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 158,
-      "volume_mm3": 25199.15969,
+      "faces_cad": 142,
+      "volume_mm3": 29278.99179,
       "dimensoes_xyz_mm": [
         40.0,
         240.02,
@@ -27,154 +27,154 @@
       "arquivo": "02_grade_central.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 439,
-      "volume_mm3": 7241.7221,
+      "faces_cad": 419,
+      "volume_mm3": 6504.81205,
       "dimensoes_xyz_mm": [
-        10.0,
-        135.7,
-        28.0
+        19.201,
+        95.0,
+        26.0
       ],
       "limites_min_xyz": [
-        1.75,
-        -67.85,
-        33.0
+        2.779,
+        -47.5,
+        34.0
       ],
       "limites_max_xyz": [
-        11.75,
-        67.85,
-        61.0
+        21.979,
+        47.5,
+        60.0
       ]
     },
     {
       "arquivo": "03_carcaca_farois_esquerdo.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 53,
-      "volume_mm3": 2639.90476,
+      "faces_cad": 56,
+      "volume_mm3": 2575.748,
       "dimensoes_xyz_mm": [
-        20.0,
-        42.0,
-        28.0
+        30.051,
+        58.0,
+        20.0
       ],
       "limites_min_xyz": [
-        3.408,
-        -115.8,
-        33.0
+        4.69,
+        -111.5,
+        37.0
       ],
       "limites_max_xyz": [
-        23.408,
-        -73.8,
-        61.0
+        34.741,
+        -53.5,
+        57.0
       ]
     },
     {
       "arquivo": "04_carcaca_farois_direito.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 53,
-      "volume_mm3": 2639.91912,
+      "faces_cad": 56,
+      "volume_mm3": 2575.74803,
       "dimensoes_xyz_mm": [
-        20.0,
-        42.0,
-        28.0
+        30.051,
+        58.0,
+        20.0
       ],
       "limites_min_xyz": [
-        3.408,
-        73.8,
-        33.0
+        4.69,
+        53.5,
+        37.0
       ],
       "limites_max_xyz": [
-        23.408,
-        115.8,
-        61.0
+        34.741,
+        111.5,
+        57.0
       ]
     },
     {
       "arquivo": "05_lente_farol_direito_1.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 56,
-      "volume_mm3": 1001.84956,
+      "faces_cad": 75,
+      "volume_mm3": 1592.52827,
       "dimensoes_xyz_mm": [
-        6.0,
-        14.6,
-        14.6
+        11.028,
+        21.0,
+        13.0
       ],
       "limites_min_xyz": [
-        2.244,
-        76.1,
-        39.7
+        4.137,
+        58.0,
+        40.5
       ],
       "limites_max_xyz": [
-        8.244,
-        90.7,
-        54.3
+        15.165,
+        79.0,
+        53.5
       ]
     },
     {
       "arquivo": "05_lente_farol_direito_2.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 56,
-      "volume_mm3": 987.92878,
+      "faces_cad": 75,
+      "volume_mm3": 1592.52831,
       "dimensoes_xyz_mm": [
-        6.0,
-        14.6,
-        14.6
+        11.319,
+        21.0,
+        13.0
       ],
       "limites_min_xyz": [
-        3.156,
-        93.9,
-        39.7
+        5.198,
+        83.0,
+        40.5
       ],
       "limites_max_xyz": [
-        9.156,
-        108.5,
-        54.3
+        16.517,
+        104.0,
+        53.5
       ]
     },
     {
       "arquivo": "05_lente_farol_esquerdo_1.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 56,
-      "volume_mm3": 1001.84955,
+      "faces_cad": 75,
+      "volume_mm3": 1592.52834,
       "dimensoes_xyz_mm": [
-        6.0,
-        14.6,
-        14.6
+        11.028,
+        21.0,
+        13.0
       ],
       "limites_min_xyz": [
-        2.244,
-        -90.7,
-        39.7
+        4.137,
+        -79.0,
+        40.5
       ],
       "limites_max_xyz": [
-        8.244,
-        -76.1,
-        54.3
+        15.165,
+        -58.0,
+        53.5
       ]
     },
     {
       "arquivo": "05_lente_farol_esquerdo_2.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 56,
-      "volume_mm3": 987.92878,
+      "faces_cad": 75,
+      "volume_mm3": 1592.52833,
       "dimensoes_xyz_mm": [
-        6.0,
-        14.6,
-        14.6
+        11.319,
+        21.0,
+        13.0
       ],
       "limites_min_xyz": [
-        3.156,
-        -108.5,
-        39.7
+        5.198,
+        -104.0,
+        40.5
       ],
       "limites_max_xyz": [
-        9.156,
-        -93.9,
-        54.3
+        16.517,
+        -83.0,
+        53.5
       ]
     },
     {
@@ -182,21 +182,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 25,
-      "volume_mm3": 368.0666,
+      "volume_mm3": 359.95057,
       "dimensoes_xyz_mm": [
-        6.0,
+        11.823,
         3.6,
-        22.4
+        16.6
       ],
       "limites_min_xyz": [
-        5.109,
-        111.2,
-        35.8
+        7.189,
+        107.0,
+        38.7
       ],
       "limites_max_xyz": [
-        11.109,
-        114.8,
-        58.2
+        19.012,
+        110.6,
+        55.3
       ]
     },
     {
@@ -204,21 +204,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 25,
-      "volume_mm3": 368.06661,
+      "volume_mm3": 359.9506,
       "dimensoes_xyz_mm": [
-        6.0,
+        11.823,
         3.6,
-        22.4
+        16.6
       ],
       "limites_min_xyz": [
-        5.109,
-        -114.8,
-        35.8
+        7.189,
+        -110.6,
+        38.7
       ],
       "limites_max_xyz": [
-        11.109,
-        -111.2,
-        58.2
+        19.012,
+        -107.0,
+        55.3
       ]
     },
     {
@@ -226,21 +226,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 43,
-      "volume_mm3": 381.26927,
+      "volume_mm3": 478.85848,
       "dimensoes_xyz_mm": [
-        5.0,
-        17.2,
-        21.8
+        12.286,
+        24.0,
+        17.0
       ],
       "limites_min_xyz": [
-        2.152,
-        74.8,
-        36.1
+        3.587,
+        56.5,
+        38.5
       ],
       "limites_max_xyz": [
-        7.152,
-        92.0,
-        57.9
+        15.874,
+        80.5,
+        55.5
       ]
     },
     {
@@ -248,21 +248,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 43,
-      "volume_mm3": 372.85659,
+      "volume_mm3": 478.85851,
       "dimensoes_xyz_mm": [
-        5.0,
-        17.2,
-        21.8
+        12.618,
+        24.0,
+        17.0
       ],
       "limites_min_xyz": [
-        3.041,
-        92.6,
-        36.1
+        4.622,
+        81.5,
+        38.5
       ],
       "limites_max_xyz": [
-        8.041,
-        109.8,
-        57.9
+        17.241,
+        105.5,
+        55.5
       ]
     },
     {
@@ -270,21 +270,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 43,
-      "volume_mm3": 381.26946,
+      "volume_mm3": 478.85848,
       "dimensoes_xyz_mm": [
-        5.0,
-        17.2,
-        21.8
+        12.286,
+        24.0,
+        17.0
       ],
       "limites_min_xyz": [
-        2.152,
-        -92.0,
-        36.1
+        3.587,
+        -80.5,
+        38.5
       ],
       "limites_max_xyz": [
-        7.152,
-        -74.8,
-        57.9
+        15.874,
+        -56.5,
+        55.5
       ]
     },
     {
@@ -292,21 +292,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 43,
-      "volume_mm3": 372.85651,
+      "volume_mm3": 478.85851,
       "dimensoes_xyz_mm": [
-        5.0,
-        17.2,
-        21.8
+        12.618,
+        24.0,
+        17.0
       ],
       "limites_min_xyz": [
-        3.041,
-        -109.8,
-        36.1
+        4.622,
+        -105.5,
+        38.5
       ],
       "limites_max_xyz": [
-        8.041,
-        -92.6,
-        57.9
+        17.241,
+        -81.5,
+        55.5
       ]
     },
     {
@@ -314,21 +314,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 43,
-      "volume_mm3": 5032.89508,
+      "volume_mm3": 5250.88458,
       "dimensoes_xyz_mm": [
-        30.0,
-        52.0,
-        15.5
+        32.863,
+        55.0,
+        12.0
       ],
       "limites_min_xyz": [
-        1.043,
-        -105.0,
-        6.25
+        1.235,
+        -106.5,
+        10.0
       ],
       "limites_max_xyz": [
-        31.043,
-        -53.0,
-        21.75
+        34.098,
+        -51.5,
+        22.0
       ]
     },
     {
@@ -336,21 +336,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 43,
-      "volume_mm3": 5032.89009,
+      "volume_mm3": 5250.88462,
       "dimensoes_xyz_mm": [
-        30.0,
-        52.0,
-        15.5
+        32.863,
+        55.0,
+        12.0
       ],
       "limites_min_xyz": [
-        1.043,
-        53.0,
-        6.25
+        1.235,
+        51.5,
+        10.0
       ],
       "limites_max_xyz": [
-        31.043,
-        105.0,
-        21.75
+        34.098,
+        106.5,
+        22.0
       ]
     },
     {
@@ -358,21 +358,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 18,
-      "volume_mm3": 1749.19922,
+      "volume_mm3": 1670.02203,
       "dimensoes_xyz_mm": [
-        10.0,
-        135.7,
-        28.0
+        19.416,
+        95.0,
+        26.0
       ],
       "limites_min_xyz": [
-        5.75,
-        -67.85,
-        33.0
+        6.779,
+        -47.5,
+        34.0
       ],
       "limites_max_xyz": [
-        15.75,
-        67.85,
-        61.0
+        26.194,
+        47.5,
+        60.0
       ]
     },
     {
@@ -380,21 +380,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 19,
-      "volume_mm3": 3557.01106,
+      "volume_mm3": 1956.21106,
       "dimensoes_xyz_mm": [
         3.0,
-        60.0,
-        25.0
+        50.0,
+        16.0
       ],
       "limites_min_xyz": [
         -3.3,
-        -30.0,
-        2.5
+        -25.0,
+        7.0
       ],
       "limites_max_xyz": [
         -0.3,
-        30.0,
-        27.5
+        25.0,
+        23.0
       ]
     },
     {
@@ -446,14 +446,14 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 30,
-      "volume_mm3": 78060.32822,
+      "volume_mm3": 75324.17676,
       "dimensoes_xyz_mm": [
-        199.7,
+        192.7,
         195.4,
         10.049
       ],
       "limites_min_xyz": [
-        10.3,
+        17.3,
         -97.7,
         57.3
       ],
