@@ -19,6 +19,12 @@ def fit_depth(name,shape):
     return one(shape,name)
 
 def part(name,shape,*args,**kwargs):
+    if name[:2] in ('02','03','04','05','06','07','10'):
+        shape=shape.translate((3.35,0.,0.))
+    if name[:2] in ('03','04'):
+        fascia=cq.importers.importStep(str(Path(__file__).resolve().parents[1]/'step/01_parachoque_dianteiro.step')).val()
+        sign=-1 if name[:2]=='03' else 1
+        shape=shape.cut(fascia).cut(fascia.translate((0.,-sign*.3,0.)))
     return _part(name,fit_depth(name,shape),*args,**kwargs)
 
 def frame(cy,cz,w,h,iw,ih,offset,depth,r=.8):
@@ -46,12 +52,6 @@ def housing(sign):
     for u in (-14.,11.):
         shape=shape.cut(rounded_prism(cy+sign*u,47.,23.6,16.6,r=.7))
     shape=shape.cut(rounded_prism(cy+sign*26.3,47.,4.2,17.2,r=.5))
-    # Clear the rear corners against the tapered fascia returns.
-    fascia_path=Path(__file__).resolve().parents[1]/'step/01_parachoque_dianteiro.step'
-    fascia=cq.importers.importStep(str(fascia_path)).val()
-    shape=shape.cut(fascia)
-    # Additional relief towards the interior leaves assembly clearance.
-    shape=shape.cut(fascia.translate((0.,-sign*.3,0.)))
     return one(shape,'carcaca farois')
 
 def lamp_frame(cy):

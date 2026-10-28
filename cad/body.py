@@ -79,6 +79,14 @@ def bumper():
     b=a.copy();b[:,:,2]-=1.8
     infill=between_grids(a,b,xs,ts)
     shape=shape.fuse(infill,infill.mirror('XZ'),tol=1e-5)
+    # Integral recessed mounting lands around grille and headlight assemblies.
+    for name,cy,cz,w,h,r in HOLES[:3]:
+        outer=rounded_prism(cy,cz,w+7.,h+7.,r=2.)
+        land=front_band(1.5,4.).intersect(outer)
+        shape=shape.fuse(land,tol=1e-5)
+        shape=shape.cut(rounded_prism(cy,cz,w,h,x0=-5.,depth=31.,r=r))
+        pocket=front_band(-1.,4.4).intersect(rounded_prism(cy,cz,w+2.,h+2.,r=1.3))
+        shape=shape.cut(pocket)
     return one(shape,'para-choque')
 
 def fender(sign):
@@ -95,7 +103,7 @@ def fender(sign):
         side=side.fuse(tab)
     # Four vertical pin seats, two on each side, underneath the hood.
     for x in (60.,185.):
-        seat=box(x-6.,x+6.,90.,105.,58.,61.)
+        seat=return_patch(np.linspace(x-6.,x+6.,5),np.linspace(58.,61.,9),.8,25.)
         hole=cq.Solid.makeCylinder(2.3,5.,cq.Vector(x,94.,57.),cq.Vector(0,0,1))
         side=side.fuse(seat.cut(hole))
     side=one(side,'para-lama')
@@ -104,11 +112,15 @@ def fender(sign):
 
 def hood(front=None):
     # Front edge follows the bowed upper edge of the fascia. 0.3 mm gap.
-    us=np.linspace(0.,1.,35);ys=np.linspace(-97.7,97.7,31)
+    us=np.linspace(0.,1.,35);ys=np.unique(np.r_[np.linspace(-97.7,97.7,45),-78.,-74.,-70.,-66.,-62.,62.,66.,70.,74.,78.])
     uu,yy=np.meshgrid(us,ys,indexing='ij')
     start=front_x(yy,65.)+2.3
     xx=start+(210.-start)*uu
-    zz=64.85+2.5*(1.-(yy/97.7)**2)*np.sin(np.pi*uu)
+    # Two longitudinal pressed ridges fade into the front and rear seams.
+    fade=np.sin(np.pi*uu)**.8
+    ridge=1.6*np.exp(-((np.abs(yy)-70.)/5.)**2)
+    center=.8*(1.-(yy/97.7)**2)
+    zz=64.85+(center+ridge)*fade
     a=np.stack([xx,yy,zz],axis=-1)
     b=a.copy();b[:,:,2]-=2.
     shape=between_grids(a,b,us,ys)

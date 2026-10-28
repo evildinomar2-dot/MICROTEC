@@ -181,8 +181,8 @@ def comparison(parts,old_step_dir,output_path):
     old=[]
     for path in sorted(Path(old_step_dir).glob('*.step')):
         old.append(dict(name=path.stem,shape=cq.importers.importStep(str(path)).val(),color=color(path.stem)))
-    if len(old)!=20 or len(parts)!=20:
-        raise ValueError('A comparacao requer os 20 componentes de cada versao')
+    if len(old)!=21 or len(parts)!=21:
+        raise ValueError('A comparacao requer os 21 componentes de cada versao')
     datasets=(old,parts)
     meshes=[]
     for index,group in enumerate(datasets):
@@ -212,8 +212,8 @@ def comparison(parts,old_step_dir,output_path):
                 result.paste(img,(i*1200+10,195 if row==0 else 895))
             if row==0:
                 draw.text((1200,824),'Para-lama esquerdo: transição do topo para a lateral',font=_font(27),fill='#252d37',anchor='mm')
-    draw.text((600,1506),'Topo plano e cantos mais retos',font=_font(25),fill='#4a5360',anchor='mm')
-    draw.text((1800,1506),'Ombro contínuo e retornos curvos',font=_font(25),fill='#4a5360',anchor='mm')
+    draw.text((600,1506),'Ombro arredondado e arco pouco marcado',font=_font(25),fill='#4a5360',anchor='mm')
+    draw.text((1800,1506),'Dobra superior e alargamento junto à roda',font=_font(25),fill='#4a5360',anchor='mm')
     draw.text((1200,1570),'Geometria CAD real • Frente de 240 mm • Grade de 95 mm',font=_font(24),fill='#4a5360',anchor='mm')
     dest=Path(output_path);dest.parent.mkdir(parents=True,exist_ok=True);result.save(dest)
     return result

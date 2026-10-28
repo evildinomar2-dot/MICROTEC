@@ -15,11 +15,11 @@ THICKNESS=2.
 # Ordem: da borda inferior externa ate a borda interna junto ao capo.
 # O maximo nominal de 65 mm fica no ombro, e o retorno desce suavemente para dentro.
 SECTION=np.array([
-    (119.,0.),(119.5,2.),(119.,5.),(118.5,8.),(118.8,21.),
-    (119.2,24.),(120.,27.),(120.,28.5),(119.8,30.),(119.2,32.),
-    (118.8,36.),(118.2,42.),(117.,48.),(115.6,52.),(113.,57.),
-    (109.5,60.5),(105.,63.),(100.5,64.4),
-    (98.,64.9)
+    (115.5,0.),(116.,2.),(115.5,5.),(115.,8.),(115.2,21.),
+    (116.,24.),(117.,27.),(117.,28.5),(116.8,30.),(116.,32.),
+    (115.6,36.),(115.3,42.),(115.,48.),(114.8,55.),
+    (114.4,60.),(113.8,62.5),(112.,64.),(109.,64.7),
+    (104.,64.9),(98.,64.9)
 ],dtype=float)
 _u=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(SECTION,axis=0),axis=1))]
 _y_of_u=PchipInterpolator(_u,SECTION[:,0])
@@ -51,12 +51,11 @@ def _longitudinal(x):
     return np.sin(np.pi*q)**2
 
 def _deform_y(x,y,z):
-    g=_longitudinal(x)
-    lower=-1.25*g*(1.-smoothstep((z-36.)/14.))
-    # Abaulamento suave acima do arco, limitado pelo envelope de 240 mm.
-    available=np.clip((120.-y)/2.,0.,1.)
-    upper=1.3*g*smoothstep((z-35.)/15.)*available*smoothstep((y-80.)/18.)
-    return lower+upper
+    # A broad stamped flare surrounds the wheel, with a narrow lip at its edge.
+    radius=np.sqrt((np.asarray(x)-WHEEL_X)**2+np.asarray(z)**2)
+    flare=3.5*(1.-smoothstep((radius-32.)/19.))
+    flare*=smoothstep((np.asarray(x)-X_START)/18.)
+    return flare
 
 def _surface_grid(xs,us):
     xx,uu=np.meshgrid(xs,us,indexing='ij')
@@ -64,7 +63,7 @@ def _surface_grid(xs,us):
     zz=_z_of_u(uu)
     y=yy+_deform_y(xx,yy,zz)
     # A curvatura longitudinal termina com derivada nula nas duas emendas.
-    z=zz-.75*_longitudinal(xx)*smoothstep((zz-52.)/10.)
+    z=zz+.08*_longitudinal(xx)*smoothstep((zz-52.)/10.)
     return np.stack([xx,y,z],axis=-1)
 
 def _shell():

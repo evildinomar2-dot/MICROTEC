@@ -7,12 +7,29 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 [Baixar o pacote completo](https://github.com/evildinomar2-dot/MICROTEC/raw/refs/heads/main/Buick_Regal_240_CAD_Fusion.zip)
 · [Ver a prévia](PREVIA_BUICK.png)
-· [Comparar a frente](COMPARACAO_FRENTE.png)
+· [Comparar as formas atuais](COMPARACAO_FORMAS.png)
+· [Revisão anterior das proporções](COMPARACAO_FRENTE.png)
 · [Conferir a inclinação lateral](VISTA_LATERAL_FRENTE.png)
 · [Vista superior com capô](VISTA_SUPERIOR_CAPO.png)
 · [Como gerar os F3D](fusion/COMO_GERAR_F3D.md)
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
+
+## Revisão das superfícies e alojamentos
+
+O ombro do para-lama foi redesenhado com dobra mais curta e lateral mais
+plana. Um alargamento de até 3,5 mm se concentra ao redor do arco, diminuindo
+ao longo de uma faixa de 19 mm; a borda estreita do arco permanece separada
+visualmente desse volume. A frente mantém o envelope de 240 mm.
+
+O capô tem dois vincos longitudinais elevados, próximos a Y=±70 mm, que
+se suavizam nas extremidades. A grade e os faróis foram recuados 3,35 mm,
+em alojamentos com apoios integrados à frente e folga nominal de 0,30 mm.
+Os suportes do capô acompanham a nova seção dos para-lamas. Os pinos continuam
+removíveis, sem travas elásticas certificadas.
+
+Estas são revisões da geometria CAD baseadas na interpretação visual da
+referência. Não constituem uma reprodução dimensional certificada do carro.
 
 ## Revisão com capô e encaixes
 
