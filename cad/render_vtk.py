@@ -81,6 +81,7 @@ def _mesh(part):
 def _offset(name):
     sign=-1. if 'esquerdo' in name else 1.
     prefix=name[:2]
+    if prefix=='14': return (0.,0.,75.)
     if prefix=='01': return (-12.,0.,0.)
     if prefix in ('12','13'): return (32.,sign*43.,13.)
     if prefix=='02': return (-45.,0.,34.)
@@ -157,7 +158,7 @@ def sheet(parts,output_dir):
     result=Image.new('RGB',(width,height),(241,243,246));draw=ImageDraw.Draw(result)
     draw.text((width//2,48),'BUICK REGAL 1987 | FRENTE DE 240 mm',font=_font(45,True),fill='#14191f',anchor='mm')
     draw.text((width//2,108),'Superficies refinadas a partir da referencia — previa dos proprios STEP',font=_font(23),fill='#4a5360',anchor='mm')
-    panels=[('Montagem — 20 componentes',{},(0,155)),
+    panels=[('Montagem — 21 componentes',{},(0,155)),
             ('Pecas separadas — vista explodida',{'explode':True},(1200,155)),
             ('Vista frontal — grade de 135,7 mm',{'front':True},(0,845)),
             ('Lentes e molduras independentes',{'detail':True},(1200,845))]

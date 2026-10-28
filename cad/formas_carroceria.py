@@ -8,18 +8,18 @@ import cadquery as cq
 from scipy.interpolate import PchipInterpolator
 from common import between_grids,box,one
 
-X_START,X_END=40.3,160.3
+X_START,X_END=40.3,210.3
 WHEEL_X,WHEEL_R=100.3,31.
 THICKNESS=2.
 
 # Ordem: da borda inferior externa ate a borda interna junto ao capo.
-# O maximo de 65 mm fica no ombro, e o retorno desce suavemente para dentro.
+# O maximo nominal de 65 mm fica no ombro, e o retorno desce suavemente para dentro.
 SECTION=np.array([
     (119.,0.),(119.5,2.),(119.,5.),(118.5,8.),(118.8,21.),
     (119.2,24.),(120.,27.),(120.,28.5),(119.8,30.),(119.2,32.),
     (118.8,36.),(118.2,42.),(117.,48.),(115.6,52.),(113.,57.),
-    (109.5,60.5),(105.,63.),(100.5,64.4),(96.,65.),
-    (90.,64.9),(85.,64.3),(80.,63.5)
+    (109.5,60.5),(105.,63.),(100.5,64.4),
+    (98.,64.9)
 ],dtype=float)
 _u=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(SECTION,axis=0),axis=1))]
 _y_of_u=PchipInterpolator(_u,SECTION[:,0])
@@ -99,14 +99,14 @@ def _arch_lip():
     return between_grids(outside,inside,angles,radii)
 
 def make_fender(sign=1):
-    """Um solido sem abas; X40.3..160.3, Y80..120, Z0..65, vao Ø62."""
+    """Um solido sem abas; X40.3..210.3, Y98..120, Z0..65, vao Ø62."""
     shell=_shell()
     lip=_arch_lip()
     shape=shell.fuse(lip)
     wheel=cq.Solid.makeCylinder(WHEEL_R,55.,cq.Vector(WHEEL_X,70.,0.),cq.Vector(0,1,0))
     shape=shape.cut(wheel)
     # Limites precisos eliminam apenas pequenos excessos de interpolacao.
-    shape=shape.intersect(box(X_START,X_END,80.,120.,0.,65.))
+    shape=shape.intersect(box(X_START,X_END,98.,120.,0.,65.))
     shape=one(shape,'para-lama curvo')
     if sign<0: shape=shape.mirror('XZ')
     return one(shape,'para-lama curvo espelhado' if sign<0 else 'para-lama curvo')

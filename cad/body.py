@@ -69,6 +69,16 @@ def bumper():
             if sign<0: pad=pad.mirror('XZ')
             shape=shape.fuse(pad,tol=1e-5)
             print('Luva',sign,z,'valido',shape.isValid(),flush=True)
+    # Shoulder infills above the headlights close the corners beside the hood.
+    xs=np.linspace(12.,40.,25);ts=np.linspace(0.,1.,17)
+    xx,tt=np.meshgrid(xs,ts,indexing='ij')
+    outer=np.minimum(119.8,return_y(xx,64.0)+.7)
+    yy=98.+(outer-98.)*tt
+    zz=np.full_like(xx,64.0)
+    a=np.stack([xx,yy,zz],axis=-1)
+    b=a.copy();b[:,:,2]-=1.8
+    infill=between_grids(a,b,xs,ts)
+    shape=shape.fuse(infill,infill.mirror('XZ'),tol=1e-5)
     return one(shape,'para-choque')
 
 def fender(sign):
@@ -83,12 +93,39 @@ def fender(sign):
         b=np.stack([xx,yy-5.9,zz],axis=-1)
         tab=between_grids(a,b,xs,zs)
         side=side.fuse(tab)
+    # Four vertical pin seats, two on each side, underneath the hood.
+    for x in (60.,185.):
+        seat=box(x-6.,x+6.,90.,105.,58.,61.)
+        hole=cq.Solid.makeCylinder(2.3,5.,cq.Vector(x,94.,57.),cq.Vector(0,0,1))
+        side=side.fuse(seat.cut(hole))
     side=one(side,'para-lama')
     if sign<0: side=side.mirror('XZ')
     return side
 
+def hood(front=None):
+    # Front edge follows the bowed upper edge of the fascia. 0.3 mm gap.
+    us=np.linspace(0.,1.,35);ys=np.linspace(-97.7,97.7,31)
+    uu,yy=np.meshgrid(us,ys,indexing='ij')
+    start=front_x(yy,65.)+2.3
+    xx=start+(210.-start)*uu
+    zz=64.85+2.5*(1.-(yy/97.7)**2)*np.sin(np.pi*uu)
+    a=np.stack([xx,yy,zz],axis=-1)
+    b=a.copy();b[:,:,2]-=2.
+    shape=between_grids(a,b,us,ys)
+    for x in (60.,185.):
+        for y in (-94.,94.):
+            # Slip-fit positioning pins, not elastic snap locks.
+            pin=cq.Solid.makeCylinder(2.,7.,cq.Vector(x,y,57.3),cq.Vector(0,0,1))
+            shape=shape.fuse(pin,cq.Solid.makeCylinder(3.,3.,cq.Vector(x,y,61.3),cq.Vector(0,0,1)))
+    if front is None:
+        front=cq.importers.importStep(str(Path(__file__).resolve().parents[1]/'step/01_parachoque_dianteiro.step')).val()
+    # Trim the leading inner lip to the fascia, with 0.3 mm rearward relief.
+    shape=shape.cut(front).cut(front.translate((.3,0.,0.)))
+    return one(shape,'capo')
+
 def build_parts():
     yield part('01_parachoque_dianteiro',bumper(),(.57,.60,.65),'carroceria')
+    yield part('14_capo',hood(),(.57,.60,.65),'carroceria')
     right=fender(1)
     yield part('12_paralama_esquerdo',right.mirror('XZ'),(.57,.60,.65),'carroceria')
     yield part('13_paralama_direito',right,(.57,.60,.65),'carroceria')

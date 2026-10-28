@@ -27,6 +27,7 @@ def triangles(part):
 def displacement(name):
     side=-1 if 'esquerdo' in name else 1
     prefix=name[:2]
+    if prefix=='14': return (0.,0.,65.)
     if prefix=='01': return (-12.,0.,0.)
     if prefix in ('12','13'): return (35.,side*48.,13.)
     if prefix=='02': return (-45.,0.,37.)
@@ -70,7 +71,7 @@ def main():
         print(p['name'],len(tri),'triangulos apenas para previa',flush=True)
     fig=plt.figure(figsize=(19,13),facecolor='#f1f3f6')
     gs=fig.add_gridspec(2,2,left=.025,right=.975,top=.89,bottom=.09,wspace=.015,hspace=.04)
-    panels=[('Montagem — 20 componentes',False,False,False),
+    panels=[('Montagem — 21 componentes',False,False,False),
             ('Peças separadas — vista explodida',True,False,False),
             ('Vista frontal — grade de 135,7 mm',False,True,False),
             ('Faróis — lentes e molduras independentes',False,False,True)]

@@ -5,8 +5,8 @@
       "arquivo": "01_parachoque_dianteiro.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 124,
-      "volume_mm3": 25427.49562,
+      "faces_cad": 158,
+      "volume_mm3": 25199.15969,
       "dimensoes_xyz_mm": [
         40.0,
         240.02,
@@ -401,12 +401,12 @@
       "arquivo": "12_paralama_esquerdo.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 37,
-      "volume_mm3": 19856.64908,
+      "faces_cad": 53,
+      "volume_mm3": 23771.31149,
       "dimensoes_xyz_mm": [
-        130.0,
-        40.0,
-        65.0
+        180.0,
+        30.0,
+        64.9
       ],
       "limites_min_xyz": [
         30.3,
@@ -414,35 +414,57 @@
         -0.0
       ],
       "limites_max_xyz": [
-        160.3,
-        -80.0,
-        65.0
+        210.3,
+        -90.0,
+        64.9
       ]
     },
     {
       "arquivo": "13_paralama_direito.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 37,
-      "volume_mm3": 19856.64909,
+      "faces_cad": 53,
+      "volume_mm3": 23771.31149,
       "dimensoes_xyz_mm": [
-        130.0,
-        40.0,
-        65.0
+        180.0,
+        30.0,
+        64.9
       ],
       "limites_min_xyz": [
         30.3,
-        80.0,
+        90.0,
         -0.0
       ],
       "limites_max_xyz": [
-        160.3,
+        210.3,
         120.0,
-        65.0
+        64.9
+      ]
+    },
+    {
+      "arquivo": "14_capo.step",
+      "solidos": 1,
+      "valido": true,
+      "faces_cad": 30,
+      "volume_mm3": 78060.32822,
+      "dimensoes_xyz_mm": [
+        199.7,
+        195.4,
+        10.049
+      ],
+      "limites_min_xyz": [
+        10.3,
+        -97.7,
+        57.3
+      ],
+      "limites_max_xyz": [
+        210.0,
+        97.7,
+        67.349
       ]
     }
   ],
-  "montagem_solidos": 20,
+  "montagem_solidos": 21,
   "montagem_valida": true,
   "folga_lateral_nominal_mm": 0.3,
   "testado_no_fusion": false,
@@ -490,6 +512,6 @@
       "volume_obstrucao_mm3": 0.0
     }
   ],
-  "pares_com_caixas_sobrepostas": 35,
+  "pares_com_caixas_sobrepostas": 42,
   "sem_interferencias_volumetricas": true
 }

@@ -19,7 +19,7 @@ def volume(shape):
 
 def color(name):
     prefix=name[:2]
-    if prefix in ('01','12','13'): return (.57,.60,.65)
+    if prefix in ('01','12','13','14'): return (.57,.60,.65)
     if prefix in ('02','07'): return CHROME
     if prefix=='05': return GLASS
     if prefix=='06': return AMBER
@@ -32,7 +32,7 @@ def load_parts():
         shape=cq.importers.importStep(str(path)).val()
         assert shape.isValid() and len(shape.Solids())==1,path.name
         result.append(dict(name=path.stem,shape=shape.Solids()[0],color=color(path.stem)))
-    assert len(result)==20,f'Esperados 20 componentes, encontrados {len(result)}'
+    assert len(result)==21,f'Esperados 21 componentes, encontrados {len(result)}'
     return result
 
 def finalize_depths():
@@ -71,9 +71,9 @@ def main():
     dest=ROOT/'BUICK_FRENTE_MONTAGEM.step'
     assembly.export(str(dest))
     reimport=cq.importers.importStep(str(dest)).val()
-    assert reimport.isValid() and len(reimport.Solids())==20
-    print('Montagem reaberta: 20 solidos validos',flush=True)
-    report=dict(unidade='mm',componentes=records,montagem_solidos=20,
+    assert reimport.isValid() and len(reimport.Solids())==21
+    print('Montagem reaberta: 21 solidos validos',flush=True)
+    report=dict(unidade='mm',componentes=records,montagem_solidos=21,
                 montagem_valida=True,folga_lateral_nominal_mm=.3,
                 testado_no_fusion=False,testado_fisicamente=False,
                 intersecoes=[],aberturas=[])

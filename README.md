@@ -1,29 +1,32 @@
 # Buick Regal 1987 — frente de 240 mm
 
-Novo estudo CAD a partir da prancha de peças separadas. **20 componentes em
-STEP, uma montagem e um script que gera 21 arquivos F3D dentro do Autodesk
+Novo estudo CAD a partir da prancha de peças separadas. **21 componentes em
+STEP, uma montagem e um script que gera 22 arquivos F3D dentro do Autodesk
 Fusion instalado no seu computador.** Não há arquivos F3D prontos neste ZIP:
 o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 [Baixar o pacote completo](https://github.com/evildinomar2-dot/MICROTEC/raw/refs/heads/main/Buick_Regal_240_CAD_Fusion.zip)
 · [Ver a prévia](PREVIA_BUICK.png)
-· [Comparar as curvas: antes e agora](COMPARACAO_CURVATURA.png)
+· [Vista superior com capô](VISTA_SUPERIOR_CAPO.png)
 · [Como gerar os F3D](fusion/COMO_GERAR_F3D.md)
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
 
-## Revisão das formas
+## Revisão com capô e encaixes
 
-A vista superior e a perspectiva da referência do carro completo orientaram
-esta revisão. A frente recebeu mais abaulamento em planta, cantos com dobra
-arredondada e retornos que se estreitam suavemente até os para-lamas. O topo
-plano dos para-lamas foi substituído por uma casca contínua, com ombro curvo,
-variação suave ao longo do comprimento e relevo acompanhando o arco da roda.
-As abas e luvas internas acompanham o novo perfil lateral.
+A vista superior da referência orientou o estreitamento dos para-lamas:
+a borda junto ao capô passa de Y=±80 para ±98 mm. O capô tem 195,4 mm
+de largura, com folga lateral de 0,30 mm. Os para-lamas foram prolongados
+até X=210,3 mm; o capô termina em X=210 mm. Esses comprimentos são
+estimativas visuais da prancha, não cotas certificadas do carro original.
+A frente mantém 240 mm e a grade mantém 135,7 mm.
 
-Foram preservadas a frente de 240 mm, a grade de 135,7 mm e as dimensões
-principais dos componentes. A comparação usa o mesmo renderizador e o mesmo
-ângulo para mostrar a mudança real na geometria.
+O capô é uma casca curva nominal de 2 mm, removível para cima, com quatro
+pinos de Ø4 mm, batentes de Ø6 mm e alojamentos Ø4,6 mm nos suportes internos dos para-lamas.
+São encaixes de posicionamento, sem trava elástica: a retenção final precisa
+ser definida/testada na impressão. Os demais componentes mantêm mangas,
+abas e montagem descritas abaixo; este conjunto não é um kit de travas
+sem cola validado. Não há dobradiças nem fixação ao chassi nesta revisão.
 
 ## Abrir no Fusion
 
@@ -47,7 +50,7 @@ o registro das novas operações feitas após a importação.
 
 Medidas em milímetros. Para os componentes da frente, as colunas indicam
 largura em Y, altura em Z e profundidade em X. O encaixe dos para-lamas
-acrescenta 10 mm à frente do painel de 120 mm.
+acrescenta 10 mm à frente do painel de 170 mm.
 
 | Componente | Quantidade | Largura × altura × profundidade |
 |---|---:|---|
@@ -60,10 +63,11 @@ acrescenta 10 mm à frente do painel de 120 mm.
 | Duto inferior aberto | 2 | 52 × 15,5 × 30 |
 | Anel de suporte traseiro da grade | 1 | 135,7 × 28 × 10 |
 | Placa opcional | 1 | 60 × 25 × 3 |
-| Para-lama dianteiro | 2 | painel: 120 de comprimento × 40 de largura × 65 de altura |
+| Capô removível | 1 | largura 195,4; comprimento aproximado 200; parede 2 |
+| Para-lama dianteiro | 2 | painel: 170 de comprimento × 22 de largura × 65 de altura |
 
 Os para-lamas têm arco de roda livre de **62 mm de diâmetro** e duas abas
-integradas por lado. Incluindo as abas, cada sólido mede **130 × 40 × 65 mm**
+integradas por lado. Incluindo as abas, cada sólido mede **180 × 30 × 65 mm**
 em X/Y/Z. Esquerda e direita são identificadas olhando para a frente a partir
 do interior do carro. X cresce para trás, Y indica a largura, Z aponta para cima.
 
@@ -97,8 +101,8 @@ referência, não uma reprodução dimensional certificada do Buick original.
 
 `validacao_cad.json` registra o resultado dos testes dos arquivos entregues:
 
-- 20 arquivos individuais, cada um com um sólido válido após exportar e reabrir;
-- montagem STEP reimportada com 20 sólidos válidos;
+- 21 arquivos individuais, cada um com um sólido válido após exportar e reabrir;
+- montagem STEP reimportada com 21 sólidos válidos;
 - passagem livre pelas cinco aberturas da casca frontal;
 - interseção volumétrica entre os pares cujas caixas delimitadoras se sobrepõem.
 
@@ -110,12 +114,13 @@ uma peça de 240 mm ou divisão posterior no Fusion.
 
 ## Arquivos e regeneração
 
-- `step/`: 20 peças separadas, posicionadas nas coordenadas da montagem;
+- `step/`: 21 peças separadas, posicionadas nas coordenadas da montagem;
 - `BUICK_FRENTE_MONTAGEM.step`: conjunto com nomes e cores;
 - `fusion/`: script e instruções para gerar os F3D;
 - `cad/`: código-fonte do modelo e da verificação;
 - `PREVIA_BUICK.png` e `VISTA_FRONTAL.png`: prévias;
-- `COMPARACAO_CURVATURA.png`: geometria anterior e revista, no mesmo ângulo;
+- `COMPARACAO_CURVATURA.png`: comparação histórica anterior à inclusão do capô;
+- `VISTA_SUPERIOR_CAPO.png`: vista superior desta revisão;
 - `MEDIDAS.csv`: dimensões medidas dos sólidos exportados;
 - `validacao_cad.json`: relatório de validação.
 
