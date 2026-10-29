@@ -3,6 +3,7 @@ from pathlib import Path
 from itertools import combinations
 import json
 import gc
+import hashlib
 import cadquery as cq
 from OCP.GProp import GProp_GProps
 from OCP.BRepGProp import BRepGProp
@@ -55,7 +56,15 @@ def main():
     import argparse
     parser=argparse.ArgumentParser()
     parser.add_argument('--finalize-depths',action='store_true')
+    parser.add_argument('--reuse-unchanged',action='store_true')
     args=parser.parse_args()
+    previous={}
+    if args.reuse_unchanged and (ROOT/'validacao_cad.json').exists():
+        previous=json.loads((ROOT/'validacao_cad.json').read_text())
+    hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'step').glob('*.step')}
+    def unchanged(name):
+        key=name+'.step'
+        return hashes.get(key)==previous.get('sha256_por_arquivo',{}).get(key) and key in hashes
     if args.finalize_depths: finalize_depths()
     parts=load_parts()
     assembly=cq.Assembly(name='BUICK_REGAL_1987_FRENTE_240MM')
@@ -76,20 +85,28 @@ def main():
     report=dict(unidade='mm',componentes=records,montagem_solidos=21,
                 montagem_valida=True,folga_lateral_nominal_mm=.3,
                 testado_no_fusion=False,testado_fisicamente=False,
-                intersecoes=[],aberturas=[])
+                intersecoes=[],aberturas=[],sha256_por_arquivo=hashes,pares_reutilizados=0,
+                parametros_aberturas=HOLES)
     front=next(p['shape'] for p in parts if p['name'].startswith('01_'))
     for name,cy,cz,w,h,r in HOLES:
         # Confere a passagem pela casca frontal ate X=20. As luvas de fixacao
         # dos para-lamas ficam mais atras, a partir de X=29.
         probe=rounded_prism(cy,cz,w-.02,h-.02,x0=-5.,depth=25.,r=r+.01)
-        v=volume(front.intersect(probe))
+        cached=next((a for a in previous.get('aberturas',[]) if a['nome']==name),None)
+        v=cached['volume_obstrucao_mm3'] if unchanged('01_parachoque_dianteiro') and cached and previous.get('parametros_aberturas')==[list(h) for h in HOLES] else volume(front.intersect(probe))
         report['aberturas'].append(dict(nome=name,intervalo_x_verificado_mm=[-5.,20.],volume_obstrucao_mm3=round(v,6)))
         assert v<.02,(name,v)
     pairs=[(a,b) for a,b in combinations(parts,2) if overlap_bounds(a['shape'],b['shape'])]
     report['pares_com_caixas_sobrepostas']=len(pairs)
     for i,(a,b) in enumerate(pairs,1):
-        intersection=a['shape'].intersect(b['shape'])
-        v=volume(intersection)
+        bad=any({x['a'],x['b']}=={a['name'],b['name']} for x in previous.get('intersecoes',[]))
+        if unchanged(a['name']) and unchanged(b['name']) and not bad:
+            intersection=None
+            v=0.
+            report['pares_reutilizados']+=1
+        else:
+            intersection=a['shape'].intersect(b['shape'])
+            v=volume(intersection)
         if v>.02:
             report['intersecoes'].append(dict(a=a['name'],b=b['name'],volume_mm3=round(v,6)))
         del intersection

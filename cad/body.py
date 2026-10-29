@@ -2,7 +2,7 @@
 from pathlib import Path
 import cadquery as cq
 import numpy as np
-from common import (front_band,front_x,between_grids,HOLES,box,rounded_prism,part,one)
+from common import (front_band,front_x,between_grids,HOLES,box,rounded_prism,part,one,panel)
 from formas_carroceria import return_y,make_fender,top_rise
 
 def smoothstep(t):
@@ -87,6 +87,13 @@ def bumper():
         shape=shape.cut(rounded_prism(cy,cz,w,h,x0=-5.,depth=31.,r=r))
         pocket=front_band(-1.,4.4).intersect(rounded_prism(cy,cz,w+2.,h+2.,r=1.3))
         shape=shape.cut(pocket)
+    # Raised continuous belt, with a fine inset groove and separate lower lip.
+    belt=panel(0.,28.,228.,4.6,-1.0,1.4,.8)
+    shape=shape.fuse(belt,tol=1e-5)
+    groove=panel(0.,28.,224.,.7,-1.1,.65,.2)
+    shape=shape.cut(groove)
+    lower=panel(0.,3.,228.,1.5,-.65,1.0,.4)
+    shape=shape.fuse(lower,tol=1e-5)
     return one(shape,'para-choque')
 
 def fender(sign):

@@ -80,6 +80,17 @@ def front_band(offset=0., thickness=2.):
 
 def rounded_prism(cy,cz,w,h,x0=-5.,depth=55.,r=0.8):
     plane = cq.Plane(origin=(x0,cy,cz),xDir=(0,1,0),normal=(1,0,0))
+    if abs(cy)<1e-8 and abs(cz-47.)<1e-8 and 85.<w<105.:
+        # Shared crowned contour for grille, mounting pocket and rear support.
+        rr=max(.3,min(r,w/8,h/8))
+        wp=(cq.Workplane(plane).moveTo(-w/2+rr,-h/2)
+            .lineTo(w/2-rr,-h/2).radiusArc((w/2,-h/2+rr),-rr)
+            .lineTo(w/2,h/2-1.-rr).radiusArc((w/2-rr,h/2-1.),-rr)
+            .spline([(w*.25,h/2-.25),(0.,h/2),(-w*.25,h/2-.25),
+                     (-w/2+rr,h/2-1.)],includeCurrent=True)
+            .radiusArc((-w/2,h/2-1.-rr),-rr).lineTo(-w/2,-h/2+rr)
+            .radiusArc((-w/2+rr,-h/2),-rr).close().extrude(depth))
+        return wp.val()
     wp = cq.Workplane(plane).rect(w,h).extrude(depth)
     if r: wp=wp.edges('|X').fillet(min(r,w/3,h/3))
     return wp.val()

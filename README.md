@@ -7,7 +7,8 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 [Baixar o pacote completo](https://github.com/evildinomar2-dot/MICROTEC/raw/refs/heads/main/Buick_Regal_240_CAD_Fusion.zip)
 · [Ver a prévia](PREVIA_BUICK.png)
-· [Comparar o perfil atual](COMPARACAO_PERFIL.png)
+· [Comparar os detalhes da frente](COMPARACAO_DETALHES.png)
+· [Comparar o perfil dos para-lamas](COMPARACAO_PERFIL.png)
 · [Para-lama isolado de lado](PERFIL_PARALAMA.png)
 · [Revisão anterior das formas](COMPARACAO_FORMAS.png)
 · [Revisão anterior das proporções](COMPARACAO_FRENTE.png)
@@ -16,6 +17,16 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 · [Como gerar os F3D](fusion/COMO_GERAR_F3D.md)
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
+
+## Detalhes da frente
+
+A grade agora tem contorno superior arqueado (1 mm de diferença entre centro
+e extremidades), moldura dupla e barras verticais de 0,64 mm. O mesmo contorno
+é usado no vão e no suporte traseiro. Cada farol recebe um aro frontal fino
+adicional. O para-choque tem faixa superior saliente, sulco contínuo de 0,7 mm
+e lábio inferior. As duas entradas de ar incluem telas abertas integradas,
+com filamentos nominais de 0,7 mm e passo de 2,5 mm. São detalhes delicados:
+a reprodução depende da impressora e deve ser conferida no fatiador.
 
 ## Perfil guiado pela prancha do carro inteiro
 
@@ -96,7 +107,7 @@ acrescenta 10 mm à frente do painel de 170 mm.
 | Lente do farol | 4 | 21 × 13 × 6 |
 | Lente do pisca | 2 | 3,6 × 16,6 × 6 |
 | Moldura individual do farol | 4 | 24 × 17 × 5 |
-| Duto inferior aberto | 2 | 55 × 12 × 30 |
+| Duto inferior com tela aberta | 2 | 55 × 12 × 30 |
 | Anel de suporte traseiro da grade | 1 | 95 × 26 × 10 |
 | Placa opcional | 1 | 50 × 16 × 3 |
 | Capô removível | 1 | largura 195,4; comprimento aproximado 200; parede 2 |

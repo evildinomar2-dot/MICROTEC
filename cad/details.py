@@ -21,10 +21,15 @@ def fit_depth(name,shape):
 def part(name,shape,*args,**kwargs):
     if name[:2] in ('02','03','04','05','06','07','10'):
         shape=shape.translate((3.35,0.,0.))
-    if name[:2] in ('03','04'):
+    if name[:2] in ('02','03','04'):
         fascia=cq.importers.importStep(str(Path(__file__).resolve().parents[1]/'step/01_parachoque_dianteiro.step')).val()
-        sign=-1 if name[:2]=='03' else 1
-        shape=shape.cut(fascia).cut(fascia.translate((0.,-sign*.3,0.)))
+        if name[:2]=='02':
+            shape=shape.cut(fascia)
+            for shift in ((0.,.15,0.),(0.,-.15,0.),(0.,0.,.15),(0.,0.,-.15)):
+                shape=shape.cut(fascia.translate(shift))
+        else:
+            sign=-1 if name[:2]=='03' else 1
+            shape=shape.cut(fascia).cut(fascia.translate((0.,-sign*.3,0.)))
     return _part(name,fit_depth(name,shape),*args,**kwargs)
 
 def frame(cy,cz,w,h,iw,ih,offset,depth,r=.8):
@@ -33,12 +38,13 @@ def frame(cy,cz,w,h,iw,ih,offset,depth,r=.8):
 def grille():
     flange=frame(0.,47.,95.,26.,89.,20.,-1.65,1.4)
     sleeve=frame(0.,47.,93.,24.,89.,20.,-.5,9.)
-    masks=[box(-5.,35.,y-.5,y+.5,35.,59.) for y in np.linspace(-43.,43.,35)]
+    masks=[box(-5.,35.,y-.32,y+.32,35.,59.) for y in np.linspace(-43.,43.,35)]
     masks.append(box(-5.,35.,-45.,45.,46.65,47.35))
     # Mascara unificada antes da intersecao: barras conectadas pelo travessao.
     mask=masks[0].fuse(*masks[1:])
     bars=front_band(-1.2,2.1).intersect(mask)
-    shape=flange.fuse(sleeve,bars)
+    bead=frame(0.,47.,94.3,25.3,92.5,23.5,-2.15,.8,.7)
+    shape=flange.fuse(sleeve,bars,bead)
     badge=panel(-32.,40.,14.,3.,-1.85,1.0,.5)
     shape=shape.fuse(badge)
     return one(shape,'grade')
@@ -57,7 +63,9 @@ def housing(sign):
 def lamp_frame(cy):
     flange=frame(cy,47.,24.,17.,21.6,13.6,-3.3,1.2,.7)
     sleeve=frame(cy,47.,23.,16.,21.6,13.6,-2.35,4.85,.65)
-    return one(flange.fuse(sleeve),'moldura farol')
+    # A thin front bead makes each lamp's individual double surround.
+    bead=frame(cy,47.,23.8,16.8,22.2,14.2,-3.7,.7,.7)
+    return one(flange.fuse(sleeve,bead),'moldura farol')
 
 def lens(cy):
     shape=panel(cy,47.,21.,13.,-3.45,5.8,.65)
@@ -77,7 +85,14 @@ def duct(sign):
     cy=sign*DUCT_Y
     flange=frame(cy,DUCT_Z,55.,12.,50.2,7.2,-1.65,1.4,1.)
     sleeve=frame(cy,DUCT_Z,53.,10.,50.2,7.2,-.5,29.,1.)
-    return one(flange.fuse(sleeve),'duto inferior')
+    # Open square screen, integrated into each duct; nominal strand 0.7 mm.
+    bars=[box(-5.,35.,cy+y-.35,cy+y+.35,DUCT_Z-4.,DUCT_Z+4.)
+          for y in np.arange(-24.,24.1,2.5)]
+    bars += [box(-5.,35.,cy-25.5,cy+25.5,DUCT_Z+z-.35,DUCT_Z+z+.35)
+             for z in (-2.5,0.,2.5)]
+    mask=bars[0].fuse(*bars[1:])
+    screen=front_band(2.2,1.).intersect(mask)
+    return one(flange.fuse(sleeve,screen),'duto com tela')
 
 def support():
     # Anel de retencao traseiro: livre ao redor da manga da grade, para colagem.

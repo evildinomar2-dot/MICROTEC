@@ -5,15 +5,15 @@
       "arquivo": "01_parachoque_dianteiro.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 194,
-      "volume_mm3": 34741.9852,
+      "faces_cad": 221,
+      "volume_mm3": 35982.38487,
       "dimensoes_xyz_mm": [
-        40.0,
+        40.877,
         240.006,
         65.0
       ],
       "limites_min_xyz": [
-        -0.0,
+        -0.877,
         -120.003,
         -0.0
       ],
@@ -27,20 +27,20 @@
       "arquivo": "02_grade_central.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 419,
-      "volume_mm3": 6504.81205,
+      "faces_cad": 695,
+      "volume_mm3": 6075.18868,
       "dimensoes_xyz_mm": [
-        19.201,
+        19.224,
         95.0,
         26.0
       ],
       "limites_min_xyz": [
-        6.129,
+        5.765,
         -47.5,
         34.0
       ],
       "limites_max_xyz": [
-        25.329,
+        24.989,
         47.5,
         60.0
       ]
@@ -225,15 +225,15 @@
       "arquivo": "07_moldura_farol_direito_1.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 43,
-      "volume_mm3": 478.85848,
+      "faces_cad": 61,
+      "volume_mm3": 512.69845,
       "dimensoes_xyz_mm": [
-        12.286,
+        12.652,
         24.0,
         17.0
       ],
       "limites_min_xyz": [
-        6.937,
+        6.572,
         56.5,
         38.5
       ],
@@ -247,15 +247,15 @@
       "arquivo": "07_moldura_farol_direito_2.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 43,
-      "volume_mm3": 478.85851,
+      "faces_cad": 61,
+      "volume_mm3": 512.69849,
       "dimensoes_xyz_mm": [
-        12.618,
+        12.983,
         24.0,
         17.0
       ],
       "limites_min_xyz": [
-        7.972,
+        7.608,
         81.5,
         38.5
       ],
@@ -269,15 +269,15 @@
       "arquivo": "07_moldura_farol_esquerdo_1.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 43,
-      "volume_mm3": 478.85848,
+      "faces_cad": 61,
+      "volume_mm3": 512.69844,
       "dimensoes_xyz_mm": [
-        12.286,
+        12.652,
         24.0,
         17.0
       ],
       "limites_min_xyz": [
-        6.937,
+        6.572,
         -80.5,
         38.5
       ],
@@ -291,15 +291,15 @@
       "arquivo": "07_moldura_farol_esquerdo_2.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 43,
-      "volume_mm3": 478.85851,
+      "faces_cad": 61,
+      "volume_mm3": 512.69849,
       "dimensoes_xyz_mm": [
-        12.618,
+        12.983,
         24.0,
         17.0
       ],
       "limites_min_xyz": [
-        7.972,
+        7.608,
         -105.5,
         38.5
       ],
@@ -313,8 +313,8 @@
       "arquivo": "08_duto_inferior_esquerdo.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 43,
-      "volume_mm3": 5250.88458,
+      "faces_cad": 331,
+      "volume_mm3": 5427.70456,
       "dimensoes_xyz_mm": [
         32.863,
         55.0,
@@ -335,8 +335,8 @@
       "arquivo": "09_duto_inferior_direito.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 43,
-      "volume_mm3": 5250.88462,
+      "faces_cad": 331,
+      "volume_mm3": 5427.70462,
       "dimensoes_xyz_mm": [
         32.863,
         55.0,
@@ -358,9 +358,9 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 18,
-      "volume_mm3": 1670.02203,
+      "volume_mm3": 1663.277,
       "dimensoes_xyz_mm": [
-        19.416,
+        19.073,
         95.0,
         26.0
       ],
@@ -370,7 +370,7 @@
         34.0
       ],
       "limites_max_xyz": [
-        29.544,
+        29.202,
         47.5,
         60.0
       ]
@@ -512,6 +512,72 @@
       "volume_obstrucao_mm3": 0.0
     }
   ],
-  "pares_com_caixas_sobrepostas": 42,
+  "sha256_por_arquivo": {
+    "12_paralama_esquerdo.step": "02a247392806fb76a61dc4faf2470f2ec4484811e1f11a4025d39d5b8360e74e",
+    "05_lente_farol_esquerdo_1.step": "b9521994fda8c9423bcc809b17a9bb96d1371a401ea058ce26aa6416dd4a4f52",
+    "06_lente_pisca_direito.step": "ff10dc0da173d974965a1550947a6eb53e8d7907d8f1dd1300f99457c4210c27",
+    "07_moldura_farol_esquerdo_1.step": "83fe726613265a7b6c1a5f742e243a01a2c22ecde3525fb66e195d56f8734754",
+    "13_paralama_direito.step": "c10519c849d0b07fb6a43389848aa3fd2424307e771e1ffc6ff2fc635be36330",
+    "03_carcaca_farois_esquerdo.step": "7f584db49d63c9519c29d6f3acc63f2ab808ea3909b1eeda3361dd41cd5d86c2",
+    "04_carcaca_farois_direito.step": "a6135b7e39d796e83234bf61da15be3bc5a448ee2ade4d386816b4d583d665e1",
+    "07_moldura_farol_direito_2.step": "08619eb88c4748383bad4696b70e3210d904c7725fb18ad010bbc23b4f86d76b",
+    "07_moldura_farol_esquerdo_2.step": "69248911b6768786b45553748004ebf3081d839684720383e98002c02fec2179",
+    "07_moldura_farol_direito_1.step": "73d1a7317f38e550c8fb1389ddf34b222c8e5605102b5c2ae0d0ece2c2fca3e7",
+    "10_suporte_interno_grade.step": "305212cb81e56a5626b15a7a0449f76af6bb8889ac41ae9ff1e92cae449c8e78",
+    "09_duto_inferior_direito.step": "635db54cdaf53ddac4be67960f010cbfc2451a59ab97b959d1ad858f29a86124",
+    "01_parachoque_dianteiro.step": "09997dccee17920c02bfa1bb81a62382709b27122297a956dfc58613e8b1a59a",
+    "11_placa_opcional.step": "e4681a7129380085fdb60292dce28e8a1df7a73309a36cd72718e73dcd65d2b8",
+    "05_lente_farol_direito_1.step": "ec155a757b4bb0da5e7491a4450660a510bcd282f1a04a4774ace806fe96acad",
+    "08_duto_inferior_esquerdo.step": "63d846de541b551be9e3548bd99146264e9c4c6f64d36f758029d66cdf78e9bb",
+    "05_lente_farol_esquerdo_2.step": "99d1b3a2f13dbf816beb55d493e6316b5782b6bf6d25874c8bb097f591390433",
+    "14_capo.step": "0a20fd41a8bf7f0cf30da63574bbd680f7ed556b119ee25eb6b7dede2d009e3e",
+    "05_lente_farol_direito_2.step": "47e9a91c471cf77933259c3af0f84edc9e443d256fb9574868a5e683a81c11bf",
+    "02_grade_central.step": "5a018d4d43bf5da308f47a359645878d9fecb1073a0a97da03acbe67ebec3d1e",
+    "06_lente_pisca_esquerdo.step": "95540991c06ed74f701efbbfa85fc9a98109123826cbfb7cd93d2a14046c67c4"
+  },
+  "pares_reutilizados": 40,
+  "parametros_aberturas": [
+    [
+      "grade",
+      0.0,
+      47.0,
+      93.6,
+      24.6,
+      1.0
+    ],
+    [
+      "farol_E",
+      -82.5,
+      47.0,
+      56.6,
+      18.6,
+      1.0
+    ],
+    [
+      "farol_D",
+      82.5,
+      47.0,
+      56.6,
+      18.6,
+      1.0
+    ],
+    [
+      "duto_E",
+      -79.0,
+      16.0,
+      53.6,
+      10.6,
+      1.0
+    ],
+    [
+      "duto_D",
+      79.0,
+      16.0,
+      53.6,
+      10.6,
+      1.0
+    ]
+  ],
+  "pares_com_caixas_sobrepostas": 43,
   "sem_interferencias_volumetricas": true
 }
