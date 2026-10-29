@@ -81,7 +81,7 @@ def main():
         ax.set_title(title,fontsize=15,pad=0,fontweight='medium')
     fig.suptitle('BUICK REGAL 1987  |  FRENTE DE 240 mm',fontsize=25,fontweight='bold',y=.965)
     fig.text(.5,.923,'Prévia dos sólidos CAD exportados • nova interpretação da prancha',ha='center',fontsize=13,color='#454c57')
-    fig.text(.5,.052,'Frente 240 × 65 × 40 mm  |  Para-lamas com arco livre Ø 62 mm  |  Folga nominal de encaixe: 0,30 mm',ha='center',fontsize=12)
+    fig.text(.5,.052,'Frente 240 × 65 × 40 mm  |  Para-lamas com arco livre Ø 68 mm  |  Folga nominal de encaixe: 0,30 mm',ha='center',fontsize=12)
     fig.text(.5,.027,'Lentes reduzidas para caber na frente escolhida. Modelo para refinamento; montagem física e Fusion ainda não testados.',ha='center',fontsize=11,color='#555d69')
     fig.savefig(ROOT/'PREVIA_BUICK.png',dpi=130,facecolor=fig.get_facecolor())
     plt.close(fig);gc.collect()

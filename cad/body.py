@@ -3,7 +3,7 @@ from pathlib import Path
 import cadquery as cq
 import numpy as np
 from common import (front_band,front_x,between_grids,HOLES,box,rounded_prism,part,one)
-from formas_carroceria import return_y,make_fender
+from formas_carroceria import return_y,make_fender,top_rise
 
 def smoothstep(t):
     t=np.clip(t,0.,1.)
@@ -105,7 +105,8 @@ def fender(sign):
     for x in (60.,185.):
         seat=return_patch(np.linspace(x-6.,x+6.,5),np.linspace(58.,61.,9),.8,25.)
         hole=cq.Solid.makeCylinder(2.3,5.,cq.Vector(x,94.,57.),cq.Vector(0,0,1))
-        side=side.fuse(seat.cut(hole))
+        seat=seat.cut(hole).translate((0.,0.,float(top_rise(x))))
+        side=side.fuse(seat)
     side=one(side,'para-lama')
     if sign<0: side=side.mirror('XZ')
     return side
@@ -120,7 +121,7 @@ def hood(front=None):
     fade=np.sin(np.pi*uu)**.8
     ridge=1.6*np.exp(-((np.abs(yy)-70.)/5.)**2)
     center=.8*(1.-(yy/97.7)**2)
-    zz=64.85+(center+ridge)*fade
+    zz=64.85+top_rise(xx)+(center+ridge)*fade
     a=np.stack([xx,yy,zz],axis=-1)
     b=a.copy();b[:,:,2]-=2.
     shape=between_grids(a,b,us,ys)
@@ -128,7 +129,8 @@ def hood(front=None):
         for y in (-94.,94.):
             # Slip-fit positioning pins, not elastic snap locks.
             pin=cq.Solid.makeCylinder(2.,7.,cq.Vector(x,y,57.3),cq.Vector(0,0,1))
-            shape=shape.fuse(pin,cq.Solid.makeCylinder(3.,3.,cq.Vector(x,y,61.3),cq.Vector(0,0,1)))
+            support=pin.fuse(cq.Solid.makeCylinder(3.,3.,cq.Vector(x,y,61.3),cq.Vector(0,0,1)))
+            shape=shape.fuse(support.translate((0.,0.,float(top_rise(x)))))
     if front is None:
         front=cq.importers.importStep(str(Path(__file__).resolve().parents[1]/'step/01_parachoque_dianteiro.step')).val()
     # Trim the leading inner lip to the fascia, with 0.3 mm rearward relief.

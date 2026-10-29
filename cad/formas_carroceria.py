@@ -9,7 +9,7 @@ from scipy.interpolate import PchipInterpolator
 from common import between_grids,box,one
 
 X_START,X_END=40.3,210.3
-WHEEL_X,WHEEL_R=100.3,31.
+WHEEL_X,WHEEL_R,WHEEL_Z=118.,34.,18.
 THICKNESS=2.
 
 # Ordem: da borda inferior externa ate a borda interna junto ao capo.
@@ -52,10 +52,13 @@ def _longitudinal(x):
 
 def _deform_y(x,y,z):
     # A broad stamped flare surrounds the wheel, with a narrow lip at its edge.
-    radius=np.sqrt((np.asarray(x)-WHEEL_X)**2+np.asarray(z)**2)
-    flare=3.5*(1.-smoothstep((radius-32.)/19.))
+    radius=np.sqrt((np.asarray(x)-WHEEL_X)**2+(np.asarray(z)-WHEEL_Z)**2)
+    flare=3.5*(1.-smoothstep((radius-35.)/15.))
     flare*=smoothstep((np.asarray(x)-X_START)/18.)
     return flare
+
+def top_rise(x):
+    return 7.*smoothstep((np.asarray(x)-X_START)/(X_END-X_START))
 
 def _surface_grid(xs,us):
     xx,uu=np.meshgrid(xs,us,indexing='ij')
@@ -63,7 +66,7 @@ def _surface_grid(xs,us):
     zz=_z_of_u(uu)
     y=yy+_deform_y(xx,yy,zz)
     # A curvatura longitudinal termina com derivada nula nas duas emendas.
-    z=zz+.08*_longitudinal(xx)*smoothstep((zz-52.)/10.)
+    z=zz+top_rise(xx)*smoothstep((zz-36.)/27.)
     return np.stack([xx,y,z],axis=-1)
 
 def _shell():
@@ -85,27 +88,40 @@ def _arch_lip():
     A pequena borda final evita a coincidencia numerica entre duas superfices
     interpoladas independentemente, que pode invalidar a uniao CAD.
     """
-    angles=np.linspace(0.,np.pi,65)
-    radii=np.linspace(30.5,35.,10)
+    angles=np.linspace(-.65,np.pi+.65,81)
+    radii=np.linspace(WHEEL_R-.5,WHEEL_R+3.,10)
     aa,rr=np.meshgrid(angles,radii,indexing='ij')
     xx=WHEEL_X+rr*np.cos(aa)
-    zz=rr*np.sin(aa)
+    zz=WHEEL_Z+rr*np.sin(aa)
     yy=side_y(zz)
     yy=yy+_deform_y(xx,yy,zz)
-    bump=.25+.75*(1.-smoothstep((rr-WHEEL_R)/4.))
+    bump=.25+.75*(1.-smoothstep((rr-WHEEL_R)/3.))
     outside=np.stack([xx,yy+bump,zz],axis=-1)
     inside=np.stack([xx,yy-1.2,zz],axis=-1)
     return between_grids(outside,inside,angles,radii)
 
 def make_fender(sign=1):
-    """Um solido sem abas; X40.3..210.3, Y98..120, Z0..65, vao Ø62."""
+    """Um solido sem abas; X40.3..210.3, Y98..120, Z0..72, vao Ø68 com centro em Z18."""
     shell=_shell()
     lip=_arch_lip()
     shape=shell.fuse(lip)
-    wheel=cq.Solid.makeCylinder(WHEEL_R,55.,cq.Vector(WHEEL_X,70.,0.),cq.Vector(0,1,0))
-    shape=shape.cut(wheel)
+    wheel=cq.Solid.makeCylinder(WHEEL_R,55.,cq.Vector(WHEEL_X,70.,WHEEL_Z),cq.Vector(0,1,0))
+    # The opening flares out below the wheel centre instead of forming hooks.
+    lower=(cq.Workplane('XZ').polyline([(WHEEL_X-38.,-1.),
+        (WHEEL_X+38.,-1.),(WHEEL_X+34.,WHEEL_Z),
+        (WHEEL_X-34.,WHEEL_Z)]).close().extrude(-55.).val().translate((0.,70.,0.)))
+    for sign in (-1,1):
+        zs=np.linspace(0.,WHEEL_Z+.2,19);us=np.linspace(-.3,3.,9)
+        zz,uu=np.meshgrid(zs,us,indexing='ij')
+        xx=WHEEL_X+sign*(34.+4.*(WHEEL_Z-zz)/(WHEEL_Z+1.)+uu)
+        yy=side_y(zz)+_deform_y(xx,side_y(zz),zz)
+        bump=.25+.75*(1.-smoothstep(uu/3.))
+        a=np.stack([xx,yy+bump,zz],axis=-1)
+        b=np.stack([xx,yy-1.2,zz],axis=-1)
+        shape=shape.fuse(between_grids(a,b,zs,us))
+    shape=shape.cut(wheel.fuse(lower))
     # Limites precisos eliminam apenas pequenos excessos de interpolacao.
-    shape=shape.intersect(box(X_START,X_END,98.,120.,0.,65.))
+    shape=shape.intersect(box(X_START,X_END,98.,120.,0.,73.))
     shape=one(shape,'para-lama curvo')
     if sign<0: shape=shape.mirror('XZ')
     return one(shape,'para-lama curvo espelhado' if sign<0 else 'para-lama curvo')

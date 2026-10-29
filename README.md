@@ -7,7 +7,9 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 [Baixar o pacote completo](https://github.com/evildinomar2-dot/MICROTEC/raw/refs/heads/main/Buick_Regal_240_CAD_Fusion.zip)
 · [Ver a prévia](PREVIA_BUICK.png)
-· [Comparar as formas atuais](COMPARACAO_FORMAS.png)
+· [Comparar o perfil atual](COMPARACAO_PERFIL.png)
+· [Para-lama isolado de lado](PERFIL_PARALAMA.png)
+· [Revisão anterior das formas](COMPARACAO_FORMAS.png)
 · [Revisão anterior das proporções](COMPARACAO_FRENTE.png)
 · [Conferir a inclinação lateral](VISTA_LATERAL_FRENTE.png)
 · [Vista superior com capô](VISTA_SUPERIOR_CAPO.png)
@@ -15,11 +17,23 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
 
+## Perfil guiado pela prancha do carro inteiro
+
+A referência principal passa a ser a prancha do carro completo. O arco anterior
+estava centrado em Z=0, formando apenas um semicírculo baixo. Nesta revisão,
+o centro está em X=118 mm e Z=18 mm, com raio de 34 mm. O topo da abertura
+chega a Z=52 mm. Abaixo do centro, as extremidades abrem para fora, evitando
+o fechamento do recorte circular junto à base. O topo do para-lama sobe suavemente 7 mm em direção à cabine,
+e o capô e seus quatro apoios acompanham a subida. O painel mantém 170 mm de
+comprimento para preservar a proporção do módulo frontal, em vez de impor
+a cota de 120 mm da prancha secundária. Estas medidas são interpretações
+visuais e permanecem editáveis.
+
 ## Revisão das superfícies e alojamentos
 
 O ombro do para-lama foi redesenhado com dobra mais curta e lateral mais
 plana. Um alargamento de até 3,5 mm se concentra ao redor do arco, diminuindo
-ao longo de uma faixa de 19 mm; a borda estreita do arco permanece separada
+ao longo de uma faixa de 15 mm; a borda estreita do arco permanece separada
 visualmente desse volume. A frente mantém o envelope de 240 mm.
 
 O capô tem dois vincos longitudinais elevados, próximos a Y=±70 mm, que
@@ -86,10 +100,10 @@ acrescenta 10 mm à frente do painel de 170 mm.
 | Anel de suporte traseiro da grade | 1 | 95 × 26 × 10 |
 | Placa opcional | 1 | 50 × 16 × 3 |
 | Capô removível | 1 | largura 195,4; comprimento aproximado 200; parede 2 |
-| Para-lama dianteiro | 2 | painel: 170 de comprimento × 22 de largura × 65 de altura |
+| Para-lama dianteiro | 2 | painel: 170 de comprimento × 22 de largura × cerca de 72 de altura |
 
-Os para-lamas têm arco de roda livre de **62 mm de diâmetro** e duas abas
-integradas por lado. Incluindo as abas, cada sólido mede **180 × 30 × 65 mm**
+Os para-lamas têm arco de roda livre de **68 mm de diâmetro**, com centro em X=118 mm e Z=18 mm, e duas abas
+integradas por lado. Incluindo as abas, cada sólido mede aproximadamente **180 × 31 × 72 mm**
 em X/Y/Z. Esquerda e direita são identificadas olhando para a frente a partir
 do interior do carro. X cresce para trás, Y indica a largura, Z aponta para cima.
 

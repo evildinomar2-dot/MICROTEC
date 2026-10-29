@@ -167,7 +167,7 @@ def sheet(parts,output_dir):
             draw.text((x+600,y+20),title,font=_font(26),fill='#252d37',anchor='mm')
             img=render(parts,Path(temp)/f'view_{i}.png',size=(1160,600),meshes=meshes,**options)
             result.paste(img,(x+20,y+55))
-    draw.text((width//2,1588),'240 x 65 x 40 mm | Grade: 95 mm | Arco livre das rodas: 62 mm',font=_font(24),fill='#252d37',anchor='mm')
+    draw.text((width//2,1588),'240 x 65 x 40 mm | Grade: 95 mm | Arco livre das rodas: 68 mm',font=_font(24),fill='#252d37',anchor='mm')
     draw.text((width//2,1640),'Modelo para refinamento. Montagem fisica e importacao no Fusion ainda nao testadas.',font=_font(22),fill='#505b69',anchor='mm')
     result.save(output/'PREVIA_BUICK.png')
     front_parts=[p for p in parts if p['name'][:2] not in ('12','13')]
@@ -211,9 +211,9 @@ def comparison(parts,old_step_dir,output_path):
                            meshes=meshes[i],azimuth=azimuth,elevation=elevation,frame_limits=limits)
                 result.paste(img,(i*1200+10,195 if row==0 else 895))
             if row==0:
-                draw.text((1200,824),'Para-lama esquerdo: transição do topo para a lateral',font=_font(27),fill='#252d37',anchor='mm')
-    draw.text((600,1506),'Ombro arredondado e arco pouco marcado',font=_font(25),fill='#4a5360',anchor='mm')
-    draw.text((1800,1506),'Dobra superior e alargamento junto à roda',font=_font(25),fill='#4a5360',anchor='mm')
+                draw.text((1200,824),'Para-lama esquerdo: perfil e abertura da roda',font=_font(27),fill='#252d37',anchor='mm')
+    draw.text((600,1506),'Arco baixo e topo quase horizontal',font=_font(25),fill='#4a5360',anchor='mm')
+    draw.text((1800,1506),'Arco elevado e topo ascendente',font=_font(25),fill='#4a5360',anchor='mm')
     draw.text((1200,1570),'Geometria CAD real • Frente de 240 mm • Grade de 95 mm',font=_font(24),fill='#4a5360',anchor='mm')
     dest=Path(output_path);dest.parent.mkdir(parents=True,exist_ok=True);result.save(dest)
     return result

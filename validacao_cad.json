@@ -401,12 +401,12 @@
       "arquivo": "12_paralama_esquerdo.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 50,
-      "volume_mm3": 25758.34506,
+      "faces_cad": 67,
+      "volume_mm3": 23873.28915,
       "dimensoes_xyz_mm": [
         180.0,
         30.758,
-        64.98
+        71.9
       ],
       "limites_min_xyz": [
         30.3,
@@ -416,19 +416,19 @@
       "limites_max_xyz": [
         210.3,
         -89.242,
-        64.98
+        71.9
       ]
     },
     {
       "arquivo": "13_paralama_direito.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 50,
-      "volume_mm3": 25758.34529,
+      "faces_cad": 67,
+      "volume_mm3": 23873.28584,
       "dimensoes_xyz_mm": [
         180.0,
         30.758,
-        64.98
+        71.9
       ],
       "limites_min_xyz": [
         30.3,
@@ -438,7 +438,7 @@
       "limites_max_xyz": [
         210.3,
         120.0,
-        64.98
+        71.9
       ]
     },
     {
@@ -446,21 +446,21 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 22,
-      "volume_mm3": 75317.78554,
+      "volume_mm3": 75317.79166,
       "dimensoes_xyz_mm": [
         192.7,
         195.4,
-        9.54
+        14.827
       ],
       "limites_min_xyz": [
         17.3,
         -97.7,
-        57.3
+        57.56
       ],
       "limites_max_xyz": [
         210.0,
         97.7,
-        66.84
+        72.388
       ]
     }
   ],
