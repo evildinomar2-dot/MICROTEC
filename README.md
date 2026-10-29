@@ -7,13 +7,13 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 [Baixar o pacote completo](https://github.com/evildinomar2-dot/MICROTEC/raw/refs/heads/main/Buick_Regal_240_CAD_Fusion.zip)
 · [Ver a prévia](PREVIA_BUICK.png)
-· [Comparar os detalhes da frente](COMPARACAO_DETALHES.png)
+· [Revisão anterior dos detalhes](COMPARACAO_DETALHES.png)
 · [Comparar o perfil dos para-lamas](COMPARACAO_PERFIL.png)
 · [Para-lama isolado de lado](PERFIL_PARALAMA.png)
-· [Revisão anterior das formas](COMPARACAO_FORMAS.png)
 · [Revisão anterior das proporções](COMPARACAO_FRENTE.png)
 · [Conferir a inclinação lateral](VISTA_LATERAL_FRENTE.png)
 · [Vista superior com capô](VISTA_SUPERIOR_CAPO.png)
+· [Comparação dos novos relevos](COMPARACAO_FORMAS.png)
 · [Como gerar os F3D](fusion/COMO_GERAR_F3D.md)
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
@@ -21,12 +21,17 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 ## Detalhes da frente
 
 A grade agora tem contorno superior arqueado (1 mm de diferença entre centro
-e extremidades), moldura dupla e barras verticais de 0,64 mm. O mesmo contorno
+e extremidades), moldura dupla e 43 barras verticais de 0,55 mm, sem travessa frontal. O mesmo contorno
 é usado no vão e no suporte traseiro. Cada farol recebe um aro frontal fino
 adicional. O para-choque tem faixa superior saliente, sulco contínuo de 0,7 mm
 e lábio inferior. As duas entradas de ar incluem telas abertas integradas,
-com filamentos nominais de 0,7 mm e passo de 2,5 mm. São detalhes delicados:
+com malha diagonal, filamentos de aproximadamente 0,5 mm e passo de 3 mm. São detalhes delicados:
 a reprodução depende da impressora e deve ser conferida no fatiador.
+
+O capô tem elevação central na borda dianteira de 3 mm, ressalto longitudinal
+de 2,8 mm e vincos junto a Y = ±50 mm.
+A frente recebeu ombros ao lado da grade e painel central rebaixado para a placa.
+As proporções permanecem aproximadas à ilustração; não se trata de uma reprodução medida do carro real.
 
 ## Perfil guiado pela prancha do carro inteiro
 
@@ -101,7 +106,7 @@ acrescenta 10 mm à frente do painel de 170 mm.
 
 | Componente | Quantidade | Largura × altura × profundidade |
 |---|---:|---|
-| Para-choque / frente inteira | 1 | 240 × 65 × 40 |
+| Para-choque / frente inteira | 1 | 240 × 68 × 40; centro elevado |
 | Grade central com barras | 1 | 95 × 26 × 10 |
 | Carcaça do conjunto de dois faróis | 2 | 58 × 20 × 20 |
 | Lente do farol | 4 | 21 × 13 × 6 |
@@ -109,7 +114,7 @@ acrescenta 10 mm à frente do painel de 170 mm.
 | Moldura individual do farol | 4 | 24 × 17 × 5 |
 | Duto inferior com tela aberta | 2 | 55 × 12 × 30 |
 | Anel de suporte traseiro da grade | 1 | 95 × 26 × 10 |
-| Placa opcional | 1 | 50 × 16 × 3 |
+| Placa opcional | 1 | 50 × 16; parede 1, acompanhando a frente |
 | Capô removível | 1 | largura 195,4; comprimento aproximado 200; parede 2 |
 | Para-lama dianteiro | 2 | painel: 170 de comprimento × 22 de largura × cerca de 72 de altura |
 
@@ -141,8 +146,8 @@ certificada da referência. O capô e os encaixes acompanham o novo recuo.
   teste físico. A folga longitudinal entre os painéis é de 0,30 mm.
 - Grade, molduras, lentes e anel traseiro foram preparados para montagem por
   colagem. Não foram criados encaixes elásticos, roscas ou fixações ao chassi.
-- A placa opcional é plana e precisa de espaçadores/adesivo adequados ao perfil
-  curvo da frente. Pode ser ocultada ou removida da montagem.
+- A placa opcional acompanha o perfil curvo e fica no painel rebaixado,
+  com folga traseira nominal de 0,35 mm para adesivo. Pode ser ocultada ou removida da montagem.
 - As lentes têm estrias decorativas; não incluem cálculo óptico, refletores,
   LED, fiação ou suportes elétricos. A transparência depende do material e do
   acabamento da impressão. A base do emblema na grade não contém letras.

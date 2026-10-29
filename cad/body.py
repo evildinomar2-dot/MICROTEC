@@ -94,6 +94,24 @@ def bumper():
     shape=shape.cut(groove)
     lower=panel(0.,3.,228.,1.5,-.65,1.0,.4)
     shape=shape.fuse(lower,tol=1e-5)
+    # Raised nose of the hood: a continuous crown above the grille.
+    ys=np.linspace(-58.,58.,59);ts=np.linspace(0.,1.,9)
+    yy,tt=np.meshgrid(ys,ts,indexing='ij')
+    crown=3.*(1.-smoothstep((np.abs(yy)-43.)/12.))
+    zz=64.+(1.+crown)*tt
+    xx=front_x(yy,zz)
+    a=np.stack([xx,yy,zz],axis=-1)
+    b=a.copy();b[:,:,0]+=2.
+    shape=shape.fuse(between_grids(a,b,ys,ts),tol=1e-5)
+    # Pressed shoulders beside the grille, following the inclined fascia.
+    for cy in (-50.5,50.5):
+        shoulder=panel(cy,47.,2.2,29.,-1.1,1.6,.65)
+        shape=shape.fuse(shoulder,tol=1e-5)
+    # Recessed central license panel with a closed back, not a through hole.
+    back=panel(0.,15.,94.,21.,1.4,2.4,1.8)
+    shape=shape.fuse(back,tol=1e-5)
+    pocket=panel(0.,15.,92.,19.,-1.2,2.4,1.4)
+    shape=shape.cut(pocket)
     return one(shape,'para-choque')
 
 def fender(sign):
@@ -120,15 +138,16 @@ def fender(sign):
 
 def hood(front=None):
     # Front edge follows the bowed upper edge of the fascia. 0.3 mm gap.
-    us=np.linspace(0.,1.,35);ys=np.unique(np.r_[np.linspace(-97.7,97.7,45),-78.,-74.,-70.,-66.,-62.,62.,66.,70.,74.,78.])
+    us=np.linspace(0.,1.,35);ys=np.unique(np.r_[np.linspace(-97.7,97.7,45),-58.,-54.,-50.,-46.,-42.,42.,46.,50.,54.,58.])
     uu,yy=np.meshgrid(us,ys,indexing='ij')
-    start=front_x(yy,65.)+2.3
+    nose_crown=3.*(1.-smoothstep((np.abs(yy)-43.)/12.))
+    start=front_x(yy,65.+nose_crown)+2.3
     xx=start+(210.-start)*uu
     # Two longitudinal pressed ridges fade into the front and rear seams.
     fade=np.sin(np.pi*uu)**.8
-    ridge=1.6*np.exp(-((np.abs(yy)-70.)/5.)**2)
-    center=.8*(1.-(yy/97.7)**2)
-    zz=64.85+top_rise(xx)+(center+ridge)*fade
+    ridge=1.2*np.exp(-((np.abs(yy)-50.)/3.5)**2)
+    center=2.8*(1.-smoothstep((np.abs(yy)-43.)/12.))
+    zz=64.85+top_rise(xx)+nose_crown*(1.-uu)+(center+ridge)*fade
     a=np.stack([xx,yy,zz],axis=-1)
     b=a.copy();b[:,:,2]-=2.
     shape=between_grids(a,b,us,ys)

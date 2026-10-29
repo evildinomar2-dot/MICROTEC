@@ -36,12 +36,11 @@ def frame(cy,cz,w,h,iw,ih,offset,depth,r=.8):
     return panel(cy,cz,w,h,offset,depth,r).cut(rounded_prism(cy,cz,iw,ih,r=min(.7,ih/5)))
 
 def grille():
-    flange=frame(0.,47.,95.,26.,89.,20.,-1.65,1.4)
-    sleeve=frame(0.,47.,93.,24.,89.,20.,-.5,9.)
-    masks=[box(-5.,35.,y-.32,y+.32,35.,59.) for y in np.linspace(-43.,43.,35)]
-    masks.append(box(-5.,35.,-45.,45.,46.65,47.35))
-    # Mascara unificada antes da intersecao: barras conectadas pelo travessao.
-    mask=masks[0].fuse(*masks[1:])
+    flange=frame(0.,47.,95.,26.,91.,22.,-1.65,1.4)
+    sleeve=frame(0.,47.,93.,24.,91.,22.,-.5,9.)
+    masks=[box(-5.,35.,y-.275,y+.275,35.,59.) for y in np.linspace(-44.,44.,43)]
+    # Bars join the perimeter; no visible horizontal crossbar.
+    mask=cq.Compound.makeCompound(masks)
     bars=front_band(-1.2,2.1).intersect(mask)
     bead=frame(0.,47.,94.3,25.3,92.5,23.5,-2.15,.8,.7)
     shape=flange.fuse(sleeve,bars,bead)
@@ -85,13 +84,19 @@ def duct(sign):
     cy=sign*DUCT_Y
     flange=frame(cy,DUCT_Z,55.,12.,50.2,7.2,-1.65,1.4,1.)
     sleeve=frame(cy,DUCT_Z,53.,10.,50.2,7.2,-.5,29.,1.)
-    # Open square screen, integrated into each duct; nominal strand 0.7 mm.
-    bars=[box(-5.,35.,cy+y-.35,cy+y+.35,DUCT_Z-4.,DUCT_Z+4.)
-          for y in np.arange(-24.,24.1,2.5)]
-    bars += [box(-5.,35.,cy-25.5,cy+25.5,DUCT_Z+z-.35,DUCT_Z+z+.35)
-             for z in (-2.5,0.,2.5)]
+    # Diamond mesh: crossing diagonal strands, 0.5 mm wide, 3 mm pitch.
+    bars=[]
+    plane=cq.Plane(origin=(-5.,cy,DUCT_Z),xDir=(0,1,0),normal=(1,0,0))
+    for slope in (-1.,1.):
+        for intercept in np.arange(-32.,32.1,3.):
+            y0,y1=-30.,30.
+            z0,z1=slope*y0+intercept,slope*y1+intercept
+            strip=(cq.Workplane(plane).polyline([(y0,z0-.35),(y1,z1-.35),
+                       (y1,z1+.35),(y0,z0+.35)]).close().extrude(40.).val())
+            bars.append(strip)
     mask=bars[0].fuse(*bars[1:])
-    screen=front_band(2.2,1.).intersect(mask)
+    aperture=rounded_prism(cy,DUCT_Z,52.,9.,r=.8)
+    screen=front_band(2.2,.7).intersect(mask).intersect(aperture)
     return one(flange.fuse(sleeve,screen),'duto com tela')
 
 def support():
@@ -99,8 +104,8 @@ def support():
     return one(frame(0.,47.,95.,26.,93.6,24.6,2.35,10.,1.),'suporte grade')
 
 def plate():
-    shape=rounded_prism(0.,15.,50.,16.,x0=-3.3,depth=3.,r=1.)
-    recess=rounded_prism(0.,15.,46.,12.,x0=-3.4,depth=.9,r=.75)
+    shape=panel(0.,15.,50.,16.,-.15,1.,1.)
+    recess=panel(0.,15.,46.,12.,-.25,.45,.75)
     return one(shape.cut(recess),'placa')
 
 def build_parts():

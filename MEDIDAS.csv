@@ -1,5 +1,5 @@
 ﻿arquivo;X_mm;Y_mm;Z_mm
-01_parachoque_dianteiro.step;40.877;240.006;65.0
+01_parachoque_dianteiro.step;40.877;240.006;68.002
 02_grade_central.step;19.224;95.0;26.0
 03_carcaca_farois_esquerdo.step;30.033;58.0;20.0
 04_carcaca_farois_direito.step;30.033;58.0;20.0
@@ -16,7 +16,7 @@
 08_duto_inferior_esquerdo.step;32.863;55.0;12.0
 09_duto_inferior_direito.step;32.863;55.0;12.0
 10_suporte_interno_grade.step;19.073;95.0;26.0
-11_placa_opcional.step;3.0;50.0;16.0
+11_placa_opcional.step;1.562;50.0;16.0
 12_paralama_esquerdo.step;180.0;30.758;71.9
 13_paralama_direito.step;180.0;30.758;71.9
-14_capo.step;192.7;195.4;14.827
+14_capo.step;191.813;195.4;15.825
