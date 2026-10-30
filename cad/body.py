@@ -22,6 +22,24 @@ def attachment(z):
     slot=return_patch(np.linspace(30.,41.,10),np.linspace(z-.3,z+5.3,9),1.8,6.2)
     return one(pad.cut(slot),'luva interna')
 
+def lamp_shelf():
+    """Casca em L: base horizontal sob os farois e espelho frontal vertical.
+
+    A borda dianteira acompanha o V em planta. A transicao lateral recolhe a
+    saliencia nos extremos, sem mover as lentes nem alterar o vao dos farois.
+    """
+    sections=[]
+    for y in np.linspace(52.,114.,25):
+        blend=float(smoothstep((y-52.)/4.)*smoothstep((114.-y)/4.))
+        ramp=float(front_x(y,35.5))
+        lip=float(front_x(y,28.))+2.0
+        front=ramp+(lip-ramp)*blend
+        rear=float(front_x(y,36.7))+LAMP_RECESS+3.3
+        points=[(front,y,30.),(front,y,35.5),(rear,y,35.5),
+                (rear,y,33.5),(front+2.,y,33.5),(front+2.,y,30.)]
+        sections.append(cq.Wire.makePolygon([cq.Vector(*p) for p in points],close=True))
+    return one(cq.Solid.makeLoft(sections),'base horizontal dos farois')
+
 def bumper():
     shape=front_band(0.,2.).intersect(box(-5.,40.,-116.,116.,0.,65.))
     zs=np.linspace(0.,65.,66)
@@ -86,7 +104,10 @@ def bumper():
         land=front_band(1.5,4.+recess).intersect(outer)
         shape=shape.fuse(land,tol=1e-5)
         shape=shape.cut(rounded_prism(cy,cz,w,h,x0=-5.,depth=31.,r=r))
-        pocket=front_band(-1.,4.4+recess).intersect(rounded_prism(cy,cz,w+2.,h+2.,r=1.3))
+        # Lower the lamp pocket floor onto the horizontal shelf (Z35.5).
+        pocket_z=cz-.6 if name.startswith('farol') else cz
+        pocket_h=h+3.2 if name.startswith('farol') else h+2.
+        pocket=front_band(-1.,4.4+recess).intersect(rounded_prism(cy,pocket_z,w+2.,pocket_h,r=1.3))
         shape=shape.cut(pocket)
     # Raised continuous belt, with a fine inset groove and separate lower lip.
     belt=panel(0.,28.,228.,4.6,-1.0,1.4,.8)
@@ -113,6 +134,8 @@ def bumper():
     shape=shape.fuse(back,tol=1e-5)
     pocket=panel(0.,15.,92.,19.,-1.2,2.4,1.4)
     shape=shape.cut(pocket)
+    shelf=lamp_shelf()
+    shape=shape.fuse(shelf,shelf.mirror('XZ'),tol=1e-5)
     return one(shape,'para-choque')
 
 def fender(sign):

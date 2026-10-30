@@ -18,6 +18,17 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
 
+## Base horizontal sob os faróis
+
+A região entre a faixa saliente do para-choque e os faróis recebeu uma casca
+em L, com topo horizontal em Z = 35,5 mm e parede de 2 mm. A face frontal
+sobe desde Z = 30 mm. A saliência se recolhe suavemente nas extremidades.
+Os conjuntos dos faróis mantêm o recuo anterior: esta revisão modifica a
+superfície abaixo deles, em vez de aprofundar novamente as lentes.
+
+[Conferir o corte lateral real do CAD](CORTE_DEGRAU_FAROL.png)
+· [Vista ampliada em perspectiva](FRENTE_DEGRAU_APROXIMADA.png)
+
 ## Faróis recuados em alojamentos
 
 Os dois conjuntos de faróis (carcaças, molduras, lentes e piscas) recuam mais

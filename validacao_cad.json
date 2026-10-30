@@ -5,8 +5,8 @@
       "arquivo": "01_parachoque_dianteiro.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 274,
-      "volume_mm3": 41942.99278,
+      "faces_cad": 306,
+      "volume_mm3": 42498.58848,
       "dimensoes_xyz_mm": [
         44.377,
         240.006,
@@ -525,7 +525,7 @@
     "07_moldura_farol_direito_1.step": "1eca7a1095b964dc3bfa90ef95a1c491635400c60df1c2fa12b19eb77f8ad615",
     "10_suporte_interno_grade.step": "40b1f7f32d938683cb1767381bcfdc9ec927949bf3339056e540a8a617a5f200",
     "09_duto_inferior_direito.step": "8e94584de005f7e1f5e89c7b12ca9cffe1f35f96a947e8209e9e3ee061872ba5",
-    "01_parachoque_dianteiro.step": "c2406a0180b89732501b88ea6dd53f9cdc5cf4966e5789a1d6f241ec99946d71",
+    "01_parachoque_dianteiro.step": "dddb359d8c87a4348ebaf2fcbe41f74b55f88df2806e1589738de3919479599b",
     "11_placa_opcional.step": "ff578488b9ba9632b6f265a93bf7fd52670f31c1ce16c5e6ae3f64a2690b2104",
     "05_lente_farol_direito_1.step": "242ecb05ca953031fb898887bdc232f57323bfb15583b89a0168df79a2588813",
     "08_duto_inferior_esquerdo.step": "e22d785dec1acccee31dc9eba114ad6d49522d82e5dea6519a45832a02676aec",
@@ -535,7 +535,7 @@
     "02_grade_central.step": "bc99b754ebc8acaa495c48c41ec5f93e92939273917a57037fc7aed0549bd403",
     "06_lente_pisca_esquerdo.step": "c28696aef91a4c7f762bda6ddd4e4f8cf756c6291047500c2666fbb3ff3813b3"
   },
-  "pares_reutilizados": 7,
+  "pares_reutilizados": 23,
   "parametros_aberturas": [
     [
       "grade",
