@@ -6,7 +6,7 @@
       "solidos": 1,
       "valido": true,
       "faces_cad": 274,
-      "volume_mm3": 38171.83909,
+      "volume_mm3": 41942.99278,
       "dimensoes_xyz_mm": [
         44.377,
         240.006,
@@ -49,20 +49,20 @@
       "arquivo": "03_carcaca_farois_esquerdo.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 55,
-      "volume_mm3": 2572.89233,
+      "faces_cad": 61,
+      "volume_mm3": 2569.86469,
       "dimensoes_xyz_mm": [
-        31.077,
+        31.276,
         58.0,
         20.0
       ],
       "limites_min_xyz": [
-        6.994,
+        11.494,
         -111.5,
         37.0
       ],
       "limites_max_xyz": [
-        38.071,
+        42.77,
         -53.5,
         57.0
       ]
@@ -71,20 +71,20 @@
       "arquivo": "04_carcaca_farois_direito.step",
       "solidos": 1,
       "valido": true,
-      "faces_cad": 55,
-      "volume_mm3": 2572.89236,
+      "faces_cad": 61,
+      "volume_mm3": 2569.8647,
       "dimensoes_xyz_mm": [
-        31.077,
+        31.276,
         58.0,
         20.0
       ],
       "limites_min_xyz": [
-        6.994,
+        11.494,
         53.5,
         37.0
       ],
       "limites_max_xyz": [
-        38.071,
+        42.77,
         111.5,
         57.0
       ]
@@ -101,12 +101,12 @@
         13.0
       ],
       "limites_min_xyz": [
-        6.575,
+        11.075,
         58.0,
         40.5
       ],
       "limites_max_xyz": [
-        18.121,
+        22.621,
         79.0,
         53.5
       ]
@@ -123,12 +123,12 @@
         13.0
       ],
       "limites_min_xyz": [
-        8.259,
+        12.759,
         83.0,
         40.5
       ],
       "limites_max_xyz": [
-        19.847,
+        24.347,
         104.0,
         53.5
       ]
@@ -145,12 +145,12 @@
         13.0
       ],
       "limites_min_xyz": [
-        6.575,
+        11.075,
         -79.0,
         40.5
       ],
       "limites_max_xyz": [
-        18.121,
+        22.621,
         -58.0,
         53.5
       ]
@@ -167,12 +167,12 @@
         13.0
       ],
       "limites_min_xyz": [
-        8.259,
+        12.759,
         -104.0,
         40.5
       ],
       "limites_max_xyz": [
-        19.847,
+        24.347,
         -83.0,
         53.5
       ]
@@ -189,12 +189,12 @@
         16.6
       ],
       "limites_min_xyz": [
-        10.542,
+        15.042,
         107.0,
         38.7
       ],
       "limites_max_xyz": [
-        22.372,
+        26.872,
         110.6,
         55.3
       ]
@@ -211,12 +211,12 @@
         16.6
       ],
       "limites_min_xyz": [
-        10.542,
+        15.042,
         -110.6,
         38.7
       ],
       "limites_max_xyz": [
-        22.372,
+        26.872,
         -107.0,
         55.3
       ]
@@ -233,12 +233,12 @@
         17.0
       ],
       "limites_min_xyz": [
-        5.614,
+        10.114,
         56.5,
         38.5
       ],
       "limites_max_xyz": [
-        18.852,
+        23.352,
         80.5,
         55.5
       ]
@@ -255,12 +255,12 @@
         17.0
       ],
       "limites_min_xyz": [
-        7.292,
+        11.792,
         81.5,
         38.5
       ],
       "limites_max_xyz": [
-        20.577,
+        25.077,
         105.5,
         55.5
       ]
@@ -277,12 +277,12 @@
         17.0
       ],
       "limites_min_xyz": [
-        5.614,
+        10.114,
         -80.5,
         38.5
       ],
       "limites_max_xyz": [
-        18.852,
+        23.352,
         -56.5,
         55.5
       ]
@@ -299,12 +299,12 @@
         17.0
       ],
       "limites_min_xyz": [
-        7.292,
+        11.792,
         -105.5,
         38.5
       ],
       "limites_max_xyz": [
-        20.577,
+        25.077,
         -81.5,
         55.5
       ]
@@ -514,28 +514,28 @@
   ],
   "sha256_por_arquivo": {
     "12_paralama_esquerdo.step": "38013fab1e4d91903b5ac4f1094c42d57de5a1f8281bfe5df3a2d14d75f4a011",
-    "05_lente_farol_esquerdo_1.step": "4378247ad67ca4c8bd839f16e8af979f68b02881e5f9762befb074e7d1caa4f7",
-    "06_lente_pisca_direito.step": "7cd9bc9d7350a6edb709364d056e42a9d5edf6fb0eb247c87925a3b43a861a9b",
-    "07_moldura_farol_esquerdo_1.step": "73e2945a1ca11e9d97cb0298601f909a9c4325b7f3c99c8ec98f8809ae4692a8",
+    "05_lente_farol_esquerdo_1.step": "6a08780403b2183bfb5b1f678973c2ce023f1f49284acb1de7eb1217658d0de2",
+    "06_lente_pisca_direito.step": "dc33c160d8d773cc270552a50dd7924cfa958b152187ffa92409b0a5e144c258",
+    "07_moldura_farol_esquerdo_1.step": "160f8237ab62b033724baf27013355bf56209b520540a3ae29e5e02b635c11b5",
     "13_paralama_direito.step": "d454ad461f4bf64fcb2e120f08516cd361ce4c90ea2058f73e246f4cf08d4522",
-    "03_carcaca_farois_esquerdo.step": "40f8346ed771902c553a17c9eb99381ae41a216e1833ff4bd49b096c8b143fb3",
-    "04_carcaca_farois_direito.step": "85dbf6ac66d9a539b67a1baf28c93a106417ba4faddd0f0131027da2c6bb5304",
-    "07_moldura_farol_direito_2.step": "33a41b4558b6b65433273d7a416c64fa2aa182e33c8565342bfcf795c4c8238a",
-    "07_moldura_farol_esquerdo_2.step": "3e4e4f471f74647a337ba53fd518f970624b8437b564c56bac146ba1e1a2eb99",
-    "07_moldura_farol_direito_1.step": "07accff04ec544861fdae2984b8ae1fb77876d055157bc66e70ec17943a36835",
+    "03_carcaca_farois_esquerdo.step": "29fc6729040568c3485ca32d0211590638b2ef15671e31def5ce6f26340dfba7",
+    "04_carcaca_farois_direito.step": "f4b0f8f2aefde218253343af3f1db9b50ae04e66027f0665ebe8985b82aaad00",
+    "07_moldura_farol_direito_2.step": "34a283dee316964a12009f7c36d8a017baa864f5b584f65257246f8c76e87a35",
+    "07_moldura_farol_esquerdo_2.step": "ec50d636a4c8bdb03ad03219af711fdda215dd0ae83d9b1482f64738aa01404f",
+    "07_moldura_farol_direito_1.step": "1eca7a1095b964dc3bfa90ef95a1c491635400c60df1c2fa12b19eb77f8ad615",
     "10_suporte_interno_grade.step": "40b1f7f32d938683cb1767381bcfdc9ec927949bf3339056e540a8a617a5f200",
     "09_duto_inferior_direito.step": "8e94584de005f7e1f5e89c7b12ca9cffe1f35f96a947e8209e9e3ee061872ba5",
-    "01_parachoque_dianteiro.step": "62c265c94bb67b520a2ab8c0843f09b113cab22b7e6e2b9cda6486b3b2cbb9de",
+    "01_parachoque_dianteiro.step": "c2406a0180b89732501b88ea6dd53f9cdc5cf4966e5789a1d6f241ec99946d71",
     "11_placa_opcional.step": "ff578488b9ba9632b6f265a93bf7fd52670f31c1ce16c5e6ae3f64a2690b2104",
-    "05_lente_farol_direito_1.step": "55018b0d44c8fa500b473d9fdda7dc1bc862ad89a8b48dcad7e8ebcaf0d81fd1",
+    "05_lente_farol_direito_1.step": "242ecb05ca953031fb898887bdc232f57323bfb15583b89a0168df79a2588813",
     "08_duto_inferior_esquerdo.step": "e22d785dec1acccee31dc9eba114ad6d49522d82e5dea6519a45832a02676aec",
-    "05_lente_farol_esquerdo_2.step": "624d7cb71a2c5e50a84060298d9b59d033abbffd04efb3d01bd7b6818030ba77",
+    "05_lente_farol_esquerdo_2.step": "6983a210d7686c100f36c2b6f561e8d5221861d8c97b8b4e5bc398d4054de083",
     "14_capo.step": "d367305331c3801b256005647a38b283447eac2707ea386f985a9636c4db76a2",
-    "05_lente_farol_direito_2.step": "f79409d99bc61687349ac65c6f1a3bfc143dd095fb71ff6001f7fd47acdd6fc0",
+    "05_lente_farol_direito_2.step": "d5dc3f74a68acbfbd9482c79ddc8f9cc4d50880b0f5fe057f310a9a1fdf82387",
     "02_grade_central.step": "bc99b754ebc8acaa495c48c41ec5f93e92939273917a57037fc7aed0549bd403",
-    "06_lente_pisca_esquerdo.step": "129211e0c909fa1b4c71f553e41dfe01b647513baabc5353508c66e429a7645d"
+    "06_lente_pisca_esquerdo.step": "c28696aef91a4c7f762bda6ddd4e4f8cf756c6291047500c2666fbb3ff3813b3"
   },
-  "pares_reutilizados": 0,
+  "pares_reutilizados": 7,
   "parametros_aberturas": [
     [
       "grade",

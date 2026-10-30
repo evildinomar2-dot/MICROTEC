@@ -2,7 +2,7 @@
 from pathlib import Path
 import cadquery as cq
 import numpy as np
-from common import (panel,rounded_prism,front_band,part as _part,one,box,LAMP_Y,LAMP_Z,DUCT_Y,DUCT_Z)
+from common import (panel,rounded_prism,front_band,part as _part,one,box,LAMP_Y,LAMP_Z,DUCT_Y,DUCT_Z,LAMP_RECESS)
 
 BLACK=(.055,.065,.08)
 CHROME=(.73,.76,.80)
@@ -21,6 +21,8 @@ def fit_depth(name,shape):
 def part(name,shape,*args,**kwargs):
     if name[:2] in ('02','03','04','05','06','07','10'):
         shape=shape.translate((3.35,0.,0.))
+    if name[:2] in ('03','04','05','06','07'):
+        shape=shape.translate((LAMP_RECESS,0.,0.))
     if name[:2] in ('02','03','04'):
         fascia=cq.importers.importStep(str(Path(__file__).resolve().parents[1]/'step/01_parachoque_dianteiro.step')).val()
         if name[:2]=='02':

@@ -2,7 +2,7 @@
 from pathlib import Path
 import cadquery as cq
 import numpy as np
-from common import (front_band,front_x,between_grids,HOLES,box,rounded_prism,part,one,panel)
+from common import (front_band,front_x,between_grids,HOLES,box,rounded_prism,part,one,panel,LAMP_RECESS)
 from formas_carroceria import return_y,make_fender,top_rise
 
 def smoothstep(t):
@@ -82,10 +82,11 @@ def bumper():
     # Integral recessed mounting lands around grille and headlight assemblies.
     for name,cy,cz,w,h,r in HOLES[:3]:
         outer=rounded_prism(cy,cz,w+7.,h+7.,r=2.)
-        land=front_band(1.5,4.).intersect(outer)
+        recess=LAMP_RECESS if name.startswith('farol') else 0.
+        land=front_band(1.5,4.+recess).intersect(outer)
         shape=shape.fuse(land,tol=1e-5)
         shape=shape.cut(rounded_prism(cy,cz,w,h,x0=-5.,depth=31.,r=r))
-        pocket=front_band(-1.,4.4).intersect(rounded_prism(cy,cz,w+2.,h+2.,r=1.3))
+        pocket=front_band(-1.,4.4+recess).intersect(rounded_prism(cy,cz,w+2.,h+2.,r=1.3))
         shape=shape.cut(pocket)
     # Raised continuous belt, with a fine inset groove and separate lower lip.
     belt=panel(0.,28.,228.,4.6,-1.0,1.4,.8)

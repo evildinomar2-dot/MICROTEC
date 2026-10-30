@@ -18,6 +18,16 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
 
+## Faróis recuados em alojamentos
+
+Os dois conjuntos de faróis (carcaças, molduras, lentes e piscas) recuam mais
+4,5 mm. As cavidades da frente foram aprofundadas na mesma medida, criando
+paredes e uma base horizontal visível abaixo dos faróis. A grade e a faixa
+saliente do para-choque mantêm suas posições. O recuo é uma aproximação visual
+da perspectiva enviada pelo usuário; ainda não foi validado por impressão.
+
+[Comparar os alojamentos antes e depois](COMPARACAO_RECUO_FAROIS.png)
+
 ## Frente em V suave
 
 A vista superior passa a ter centro avançado e laterais recuadas. A curva em

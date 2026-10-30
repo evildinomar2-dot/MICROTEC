@@ -10,6 +10,7 @@ import cadquery as cq
 
 WIDTH, HEIGHT, DEPTH = 240.0, 65.0, 40.0
 WALL, CLEARANCE = 2.0, 0.30
+LAMP_RECESS = 4.5  # Additional setback of housings, bezels, lenses and indicators.
 GRILLE_W, GRILLE_H, GRILLE_Z = 95.0, 26.0, 47.0
 LAMP_W, LAMP_H, LAMP_Y, LAMP_Z = 58.0, 20.0, 82.5, 47.0
 DUCT_W, DUCT_H, DUCT_Y, DUCT_Z = 55.0, 12.0, 79.0, 16.0
