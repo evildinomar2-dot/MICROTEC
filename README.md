@@ -18,6 +18,17 @@ o Fusion não está instalado no ambiente usado para preparar os sólidos.
 
 ![Montagem e peças separadas](PREVIA_BUICK.png)
 
+## Frente em V suave
+
+A vista superior passa a ter centro avançado e laterais recuadas. A curva em
+planta usa centro em -3,5 mm e extremos em +4 mm em relação ao perfil vertical:
+são 7,5 mm de diferença entre o centro e Y = ±116 mm, com ponta arredondada.
+A grade, os alojamentos dos faróis, os dutos, os frisos e a borda do capô usam
+a mesma referência. As posições internas das peças continuam independentes.
+O ângulo é uma aproximação visual, pois não foi fornecida uma seção medida.
+
+[Conferir a frente vista de cima](VISTA_SUPERIOR_FLECHA.png)
+
 ## Detalhes da frente
 
 A grade agora tem contorno superior arqueado (1 mm de diferença entre centro

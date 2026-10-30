@@ -28,8 +28,11 @@ PROFILE = np.array([(0.,1.0),(1.,0.35),(2.,0.),(3.,.35),(5.,1.6),
 _section = PchipInterpolator(PROFILE[:,0], PROFILE[:,1])
 
 def front_x(y, z):
-    # Abaulamento em planta: as laterais recuam 4 mm antes da dobra do canto.
-    return _section(z) + 4.0*(np.asarray(y)/116.0)**2
+    # Shallow V in plan: center advances 3.5 mm; corner remains at +4 mm.
+    # A 6 mm rounded apex avoids a sharp knife edge at the symmetry plane.
+    y=np.asarray(y,dtype=float)
+    t=(np.sqrt(y*y+6.**2)-6.)/(np.sqrt(116.**2+6.**2)-6.)
+    return _section(z)-3.5+7.5*t
 
 def spline_face(grid, us, vs):
     from OCP.TColgp import TColgp_Array2OfPnt
